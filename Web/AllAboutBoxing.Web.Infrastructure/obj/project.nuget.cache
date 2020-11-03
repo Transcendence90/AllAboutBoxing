@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "8GG8vc6ktcFM9+tHlheN27owpcpWCShsiwoe1BnZC70xrDJzsJSX7MYd9GwFVKiqsFrVxgP8Ty7Vs2AE5BWruw==",
+  "success": true,
+  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Web\\AllAboutBoxing.Web.Infrastructure\\AllAboutBoxing.Web.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Martin\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
+    "C:\\Users\\Martin\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
+  ],
+  "logs": []
+}
