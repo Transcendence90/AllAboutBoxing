@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+﻿using AllAboutBoxing.Data.Models.Enumerations;
 
 namespace AllAboutBoxing.Data.Models
 {

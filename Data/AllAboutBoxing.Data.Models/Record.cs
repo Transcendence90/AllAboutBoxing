@@ -1,8 +1,12 @@
-﻿namespace AllAboutBoxing.Data.Models
+﻿using System.Collections.Generic;
+
+namespace AllAboutBoxing.Data.Models
 {
     public class Record
     {
         public int BoxerId { get; set; }
+
+        public Boxer Boxer { get; set; }
 
         public byte Wins { get; set; }
 
@@ -11,5 +15,13 @@
         public byte Draws { get; set; }
 
         public byte NoContests { get; set; }
+
+        public byte Knockouts { get; set; }
+
+        public byte KnockoutsPercentage { get; set; }
+
+        public int Rounds { get; set; }
+
+        public virtual ICollection<Bout> Bouts { get; set; }
     }
 }

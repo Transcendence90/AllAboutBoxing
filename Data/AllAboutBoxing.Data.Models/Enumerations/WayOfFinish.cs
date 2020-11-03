@@ -8,5 +8,7 @@
         KO = 4,
         TKO = 5,
         RTD = 6,
+        Draw = 7,
+        NC = 8,
     }
 }

@@ -26,6 +26,20 @@
 
         public DbSet<Setting> Settings { get; set; }
 
+        public DbSet<Boxer> Boxers { get; set; }
+
+        public DbSet<Residence> Residences { get; set; }
+
+        public DbSet<WeightClass> WeightClasses { get; set; }
+
+        public DbSet<Bout> Bouts { get; set; }
+
+        public DbSet<Ranking> Rankings { get; set; }
+
+        public DbSet<Champion> Champions { get; set; }
+
+        public DbSet<Record> Records { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)

@@ -1,5 +1,6 @@
 ﻿using AllAboutBoxing.Data.Models.Enumerations;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace AllAboutBoxing.Data.Models
@@ -29,6 +30,8 @@ namespace AllAboutBoxing.Data.Models
 
         public Residence Residence { get; set; }
 
+        public int BirthPlaceId { get; set; }
+
         public Residence BirthPlace { get; set; }
 
         public Stance Stance { get; set; }
@@ -38,5 +41,7 @@ namespace AllAboutBoxing.Data.Models
         public int Height { get; set; }
 
         public int Reach { get; set; }
+
+        public virtual ICollection<Bout> Bouts { get; set; }
     }
 }
