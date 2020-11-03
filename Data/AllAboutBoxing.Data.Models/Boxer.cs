@@ -16,6 +16,7 @@ namespace AllAboutBoxing.Data.Models
 
         public Sex Sex { get; set; }
 
+        [MaxLength(50)]
         public string Alias { get; set; }
 
         public Record Record { get; set; }
