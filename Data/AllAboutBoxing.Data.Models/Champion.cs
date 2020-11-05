@@ -4,6 +4,8 @@ namespace AllAboutBoxing.Data.Models
 {
     public class Champion
     {
+        public int Id { get; set; }
+
         public int WeightClassId { get; set; }
 
         public WeightClass WeightClass { get; set; }

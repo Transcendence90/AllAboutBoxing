@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Reflection;
+    using System.Security.Cryptography.X509Certificates;
     using System.Threading;
     using System.Threading.Tasks;
 
@@ -27,6 +28,8 @@
         public DbSet<Setting> Settings { get; set; }
 
         public DbSet<Boxer> Boxers { get; set; }
+
+        public DbSet<BoxerBout> BoxersBouts { get; set; }
 
         public DbSet<Residence> Residences { get; set; }
 
@@ -61,6 +64,26 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            builder.Entity<BoxerBout>(entity =>
+            {
+                entity.HasKey(x => new { x.BoutId, x.BoxerId});
+            });
+
+            //builder.Entity<Bout>(entity =>
+            //{
+            //    entity.HasKey(x => x.Id);
+
+            //    entity.HasOne(x => x.FirstBoxer)
+            //    .WithMany(x => x.Bouts)
+            //    .HasForeignKey(x => x.FirstBoxerId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+
+            //    entity.HasOne(x => x.SecondBoxer)
+            //    .WithMany(x => x.Bouts)
+            //    .HasForeignKey(x => x.SecondBoxerId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+            //});
+
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
 

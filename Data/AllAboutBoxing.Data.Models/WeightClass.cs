@@ -1,9 +1,11 @@
-﻿using AllAboutBoxing.Data.Models.Enumerations;
-
-namespace AllAboutBoxing.Data.Models
+﻿namespace AllAboutBoxing.Data.Models
 {
+    using AllAboutBoxing.Data.Models.Enumerations;
+
     public class WeightClass
     {
+        public int Id { get; set; }
+
         public Division Division { get; set; }
 
         public float Kg { get; set; }

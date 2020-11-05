@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AllAboutBoxing.Data", "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.D" +
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AllAboutBoxing.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.D" +
     "ata", "AllAboutBoxing.Data.csproj", "0")]
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AllAboutBoxing.Web", "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Web\\AllAboutBoxing.We" +
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AllAboutBoxing.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Web\\AllAboutBoxing.We" +
     "b", "AllAboutBoxing.Web.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AllAboutBoxing.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]

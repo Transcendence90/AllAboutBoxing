@@ -1,9 +1,18 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AllAboutBoxing.Data.Models
 {
     public class Record
     {
+        public Record()
+        {
+            this.Bouts = new HashSet<Bout>();
+        }
+
+        public int Id { get; set; }
+
+        [ForeignKey(nameof(Boxer))]
         public int BoxerId { get; set; }
 
         public Boxer Boxer { get; set; }
