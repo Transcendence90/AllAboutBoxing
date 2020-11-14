@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
     using AllAboutBoxing.Data.Models.Enumerations;
 
     public class Boxer
@@ -12,6 +13,7 @@
         {
             this.HomeBouts = new HashSet<Bout>();
             this.AwayBouts = new HashSet<Bout>();
+            this.WeightClasses = new HashSet<WeightClass>();
         }
 
         public int Id { get; set; }
@@ -33,6 +35,9 @@
         public int BoutId { get; set; }
 
         public Bout Bout { get; set; }
+
+        [ForeignKey(nameof(Record))]
+        public int RecordId { get; set; }
 
         public Record Record { get; set; }
 
@@ -61,5 +66,7 @@
 
         [InverseProperty("SecondBoxer")]
         public virtual ICollection<Bout> AwayBouts { get; set; }
+
+        public virtual ICollection<WeightClass> WeightClasses { get; set; }
     }
 }

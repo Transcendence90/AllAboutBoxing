@@ -29,7 +29,7 @@ namespace AllAboutBoxing.Data.Models
 
         public byte KnockoutsPercentage { get; set; }
 
-        public int Rounds { get; set; }
+        public int RoundsPlayed { get; set; }
 
         public virtual ICollection<Bout> Bouts { get; set; }
     }

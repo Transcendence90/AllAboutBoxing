@@ -25,9 +25,12 @@
 
         public Boxer SecondBoxer { get; set; }
 
+        [ForeignKey(nameof(WeightClass))]
         public int WeightClassId { get; set; }
 
         public WeightClass WeightClass { get; set; }
+
+        public int Rounds { get; set; }
 
         public WayOfFinish WayOfFinish { get; set; }
 

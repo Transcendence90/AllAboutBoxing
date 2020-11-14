@@ -1,12 +1,10 @@
-﻿using AllAboutBoxing.Data.Models.Enumerations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AllAboutBoxing.Data.Models
+﻿namespace AllAboutBoxing.Data.Models
 {
-    public class Champion
-    {
-        public int Id { get; set; }
+    using AllAboutBoxing.Data.Common.Models;
+    using System.ComponentModel.DataAnnotations.Schema;
 
+    public class BoxerWeightClass : BaseDeletableModel<int>
+    {
         [ForeignKey(nameof(WeightClass))]
         public int WeightClassId { get; set; }
 
@@ -16,7 +14,5 @@ namespace AllAboutBoxing.Data.Models
         public int BoxerId { get; set; }
 
         public Boxer Boxer { get; set; }
-
-        public Organization Organization { get; set; }
     }
 }
