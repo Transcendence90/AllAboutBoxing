@@ -1,0 +1,33 @@
+﻿@model AllAboutBoxing.Web.ViewModels.WeightClasses.WeightClassesListViewModel
+@{ 
+    this.ViewData["Title"] = "Weightclasses";
+}
+
+<div class="text-center">
+    <h1>@this.ViewData["Title"]</h1>
+    <hr />
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Division</th>
+                <th>Weight limit</th>
+                <th>Established</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var weightClass in Model.WeightClasses)
+            {
+                <tr class="table-danger">
+                    <td>
+                        @weightClass.Division
+                    </td>
+                    <td>
+                        @weightClass.Weightlimit
+                    </td>
+                    <td>
+                        @weightClass.Established
+                    </td>
+                </tr>
+            }
+    </table>
+</div>

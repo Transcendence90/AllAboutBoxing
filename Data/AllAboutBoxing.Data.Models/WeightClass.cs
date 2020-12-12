@@ -2,25 +2,21 @@
 {
     using System.Collections.Generic;
 
-    using AllAboutBoxing.Data.Models.Enumerations;
+    using AllAboutBoxing.Data.Common.Models;
 
-    public class WeightClass
+    public class WeightClass : BaseDeletableModel<int>
     {
         public WeightClass()
         {
-            this.Boxers = new HashSet<BoxerWeightClass>();
+            this.Boxers = new HashSet<Boxer>();
         }
 
-        public int Id { get; set; }
+        public string Division { get; set; }
 
-        public Division Division { get; set; }
-
-        public float Kg { get; set; }
-
-        public float Lb { get; set; }
+        public string WeightLimit { get; set; }
 
         public int Established { get; set; }
 
-        public virtual ICollection<BoxerWeightClass> Boxers { get; set; }
+        public virtual ICollection<Boxer> Boxers { get; set; }
     }
 }

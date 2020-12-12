@@ -1,13 +1,16 @@
-﻿using AllAboutBoxing.Data.Common.Models;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AllAboutBoxing.Data.Models
+﻿namespace AllAboutBoxing.Data.Models
 {
+    using System.Collections.Generic;
+
+    using AllAboutBoxing.Data.Common.Models;
+
     public class HallOfFame : BaseDeletableModel<int>
     {
-        [ForeignKey(nameof(Boxer))]
-        public int BoxerId { get; set; }
+        public HallOfFame()
+        {
+            this.HallOfFameBoxers = new HashSet<Boxer>();
+        }
 
-        public Boxer Boxer { get; set; }
+        public virtual ICollection<Boxer> HallOfFameBoxers { get; set; }
     }
 }

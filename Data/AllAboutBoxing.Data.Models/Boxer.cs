@@ -5,18 +5,15 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    using AllAboutBoxing.Data.Models.Enumerations;
+    using AllAboutBoxing.Data.Common.Models;
 
-    public class Boxer
+    public class Boxer : BaseDeletableModel<int>
     {
         public Boxer()
         {
             this.HomeBouts = new HashSet<Bout>();
             this.AwayBouts = new HashSet<Bout>();
-            this.WeightClasses = new HashSet<WeightClass>();
         }
-
-        public int Id { get; set; }
 
         [Required]
         [MaxLength(50)]
@@ -24,14 +21,15 @@
 
         public string Description { get; set; }
 
-        public byte Age { get; set; }
-
-        public Sex Sex { get; set; }
+        public int Age { get; set; }
 
         [MaxLength(50)]
         public string Alias { get; set; }
 
-        [ForeignKey(nameof(Bout))]
+        public int WeightClassId { get; set; }
+
+        public WeightClass WeightClass { get; set; }
+
         public int BoutId { get; set; }
 
         public Bout Bout { get; set; }
@@ -43,30 +41,24 @@
 
         public bool IsActive { get; set; }
 
-        public string LogoUrl { get; set; }
+        public string ImageUrl { get; set; }
 
-        public int ResidenceId { get; set; }
+        public int CountryId { get; set; }
 
-        public Residence Residence { get; set; }
+        public Country Country { get; set; }
 
-        public int BirthPlaceId { get; set; }
+        public string Stance { get; set; }
 
-        public Residence BirthPlace { get; set; }
+        public DateTime Debut { get; set; }
 
-        public Stance Stance { get; set; }
+        public string Height { get; set; }
 
-        public DateTime BirthDate { get; set; }
-
-        public int Height { get; set; }
-
-        public int Reach { get; set; }
+        public string Reach { get; set; }
 
         [InverseProperty("FirstBoxer")]
         public virtual ICollection<Bout> HomeBouts { get; set; }
 
         [InverseProperty("SecondBoxer")]
         public virtual ICollection<Bout> AwayBouts { get; set; }
-
-        public virtual ICollection<WeightClass> WeightClasses { get; set; }
     }
 }

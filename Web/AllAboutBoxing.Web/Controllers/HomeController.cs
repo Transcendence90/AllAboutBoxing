@@ -2,15 +2,23 @@
 {
     using System.Diagnostics;
 
+    using AllAboutBoxing.Services.Data;
     using AllAboutBoxing.Web.ViewModels;
-
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController
     {
+        private readonly IGetCountsService getCountsService;
+
+        public HomeController(IGetCountsService getCountsService)
+        {
+            this.getCountsService = getCountsService;
+        }
+
         public IActionResult Index()
         {
-            return this.View();
+            var viewModel = this.getCountsService.GetCounts();
+            return this.View(viewModel);
         }
 
         public IActionResult Privacy()

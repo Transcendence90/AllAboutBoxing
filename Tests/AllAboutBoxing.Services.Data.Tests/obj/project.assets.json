@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AngleSharp/0.14.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Text.Encoding.CodePages": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AngleSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AngleSharp.dll": {}
+        }
+      },
       "AutoMapper/10.1.1": {
         "type": "package",
         "dependencies": {
@@ -2376,7 +2388,7 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Text.Encoding.CodePages.dll": {}
@@ -2688,13 +2700,28 @@
           "bin/placeholder/AllAboutBoxing.Data.Models.dll": {}
         }
       },
+      "AllAboutBoxing.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "AllAboutBoxing.Data.Models": "1.0.0",
+          "AngleSharp": "0.14.0"
+        },
+        "compile": {
+          "bin/placeholder/AllAboutBoxing.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AllAboutBoxing.Services.dll": {}
+        }
+      },
       "AllAboutBoxing.Services.Data/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "AllAboutBoxing.Data.Common": "1.0.0",
           "AllAboutBoxing.Data.Models": "1.0.0",
-          "AllAboutBoxing.Services.Mapping": "1.0.0"
+          "AllAboutBoxing.Services.Mapping": "1.0.0",
+          "AllAboutBoxing.Web.ViewModels": "1.0.0"
         },
         "compile": {
           "bin/placeholder/AllAboutBoxing.Services.Data.dll": {}
@@ -2715,10 +2742,46 @@
         "runtime": {
           "bin/placeholder/AllAboutBoxing.Services.Mapping.dll": {}
         }
+      },
+      "AllAboutBoxing.Web.ViewModels/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "AllAboutBoxing.Data.Models": "1.0.0",
+          "AllAboutBoxing.Services": "1.0.0",
+          "AllAboutBoxing.Services.Mapping": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AllAboutBoxing.Web.ViewModels.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AllAboutBoxing.Web.ViewModels.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AngleSharp/0.14.0": {
+      "sha512": "34w9I7nyszfEYBY8g7T3B0AtWlOivNh+QoWc3KECRwbmcNyqWmb4huihtmpH2Ds7rIRRHMMPv9yfPBxxjBn03g==",
+      "type": "package",
+      "path": "anglesharp/0.14.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "anglesharp.0.14.0.nupkg.sha512",
+        "anglesharp.nuspec",
+        "lib/net46/AngleSharp.dll",
+        "lib/net46/AngleSharp.xml",
+        "lib/net461/AngleSharp.dll",
+        "lib/net461/AngleSharp.xml",
+        "lib/net472/AngleSharp.dll",
+        "lib/net472/AngleSharp.xml",
+        "lib/netstandard1.3/AngleSharp.dll",
+        "lib/netstandard1.3/AngleSharp.xml",
+        "lib/netstandard2.0/AngleSharp.dll",
+        "lib/netstandard2.0/AngleSharp.xml"
+      ]
+    },
     "AutoMapper/10.1.1": {
       "sha512": "uMgbqOdu9ZG5cIOty0C85hzzayBH2i9BthnS5FlMqKtMSHDv4ts81a2jS1VFaDBVhlBeIqJ/kQKjQY95BZde9w==",
       "type": "package",
@@ -8627,6 +8690,11 @@
       "path": "../../Data/AllAboutBoxing.Data.Models/AllAboutBoxing.Data.Models.csproj",
       "msbuildProject": "../../Data/AllAboutBoxing.Data.Models/AllAboutBoxing.Data.Models.csproj"
     },
+    "AllAboutBoxing.Services/1.0.0": {
+      "type": "project",
+      "path": "../../Services/AllAboutBoxing.Services/AllAboutBoxing.Services.csproj",
+      "msbuildProject": "../../Services/AllAboutBoxing.Services/AllAboutBoxing.Services.csproj"
+    },
     "AllAboutBoxing.Services.Data/1.0.0": {
       "type": "project",
       "path": "../../Services/AllAboutBoxing.Services.Data/AllAboutBoxing.Services.Data.csproj",
@@ -8636,6 +8704,11 @@
       "type": "project",
       "path": "../../Services/AllAboutBoxing.Services.Mapping/AllAboutBoxing.Services.Mapping.csproj",
       "msbuildProject": "../../Services/AllAboutBoxing.Services.Mapping/AllAboutBoxing.Services.Mapping.csproj"
+    },
+    "AllAboutBoxing.Web.ViewModels/1.0.0": {
+      "type": "project",
+      "path": "../../Web/AllAboutBoxing.Web.ViewModels/AllAboutBoxing.Web.ViewModels.csproj",
+      "msbuildProject": "../../Web/AllAboutBoxing.Web.ViewModels/AllAboutBoxing.Web.ViewModels.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8680,6 +8753,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {
             "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj": {
               "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj"
@@ -8698,6 +8772,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
@@ -8743,7 +8818,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

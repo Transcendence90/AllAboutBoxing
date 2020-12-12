@@ -21,6 +21,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\AllAboutBoxing.Data.Models\AllAboutBoxing.Data.Models.csproj" />
     <ProjectReference Include="..\..\Services\AllAboutBoxing.Services.Mapping\AllAboutBoxing.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Services\AllAboutBoxing.Services\AllAboutBoxing.Services.csproj" />
   </ItemGroup>
 
 </Project>

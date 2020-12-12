@@ -1,22 +1,26 @@
-﻿using AllAboutBoxing.Data.Models.Enumerations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AllAboutBoxing.Data.Models
+﻿namespace AllAboutBoxing.Data.Models
 {
-    public class Champion
-    {
-        public int Id { get; set; }
+    using System.Collections.Generic;
 
-        [ForeignKey(nameof(WeightClass))]
+    using AllAboutBoxing.Data.Common.Models;
+
+    public class Champion : BaseDeletableModel<int>
+    {
+        public Champion()
+        {
+            this.Champions = new HashSet<Boxer>();
+        }
+
         public int WeightClassId { get; set; }
 
         public WeightClass WeightClass { get; set; }
 
-        [ForeignKey(nameof(Boxer))]
         public int BoxerId { get; set; }
 
         public Boxer Boxer { get; set; }
 
-        public Organization Organization { get; set; }
+        public string Organization { get; set; }
+
+        public virtual ICollection<Boxer> Champions { get; set; }
     }
 }

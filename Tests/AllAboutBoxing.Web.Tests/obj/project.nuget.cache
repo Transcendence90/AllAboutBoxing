@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "1DT1xGx1NBP9BZtftyXi2wdl4ok3/hz8lwwRDR63tYy8IcGpIkYMkjsAR0EqvvKC4mQb6qjJwJ6xqEgxc5DCiQ==",
+  "dgSpecHash": "6kXKdXLtFhImmtZyRnER+P6oJI1GjVyuWog/VhAA4vQI2C1/GvAD2A0j2luGV1FruK8M00Ws4uzI5QIPfJGQ7w==",
   "success": true,
   "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Tests\\AllAboutBoxing.Web.Tests\\AllAboutBoxing.Web.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Martin\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\buildbundlerminifier\\3.2.449\\buildbundlerminifier.3.2.449.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",

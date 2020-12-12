@@ -1,36 +1,28 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace AllAboutBoxing.Data.Models
+﻿namespace AllAboutBoxing.Data.Models
 {
-    public class Record
+    using System.ComponentModel.DataAnnotations.Schema;
+
+    using AllAboutBoxing.Data.Common.Models;
+
+    public class Record : BaseDeletableModel<int>
     {
-        public Record()
-        {
-            this.Bouts = new HashSet<Bout>();
-        }
-
-        public int Id { get; set; }
-
         [ForeignKey(nameof(Boxer))]
         public int BoxerId { get; set; }
 
         public Boxer Boxer { get; set; }
 
-        public byte Wins { get; set; }
+        public int Wins { get; set; }
 
-        public byte Loses { get; set; }
+        public int Loses { get; set; }
 
-        public byte Draws { get; set; }
+        public int Draws { get; set; }
 
-        public byte NoContests { get; set; }
+        public int? NoContests { get; set; }
 
-        public byte Knockouts { get; set; }
+        public int Knockouts { get; set; }
 
-        public byte KnockoutsPercentage { get; set; }
+        public int KnockoutsPercentage { get; set; }
 
         public int RoundsPlayed { get; set; }
-
-        public virtual ICollection<Bout> Bouts { get; set; }
     }
 }

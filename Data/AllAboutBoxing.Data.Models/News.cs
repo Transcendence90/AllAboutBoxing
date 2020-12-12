@@ -1,11 +1,13 @@
 ﻿namespace AllAboutBoxing.Data.Models
 {
-    public class News
-    {
-        public int Id { get; set; }
+    using AllAboutBoxing.Data.Common.Models;
 
+    public class News : BaseModel<int>
+    {
         public string Description { get; set; }
 
         public string Url { get; set; }
+
+        public string ImageUrl { get; set; }
     }
 }
