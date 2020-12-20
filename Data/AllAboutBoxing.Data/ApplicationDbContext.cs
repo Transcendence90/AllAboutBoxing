@@ -26,21 +26,19 @@
 
         public DbSet<Boxer> Boxers { get; set; }
 
-        public DbSet<BoxerBout> BoxersBouts { get; set; }
-
         public DbSet<Country> Countries { get; set; }
 
         public DbSet<WeightClass> WeightClasses { get; set; }
 
         public DbSet<Bout> Bouts { get; set; }
 
+        public DbSet<BoxerBout> BoxersBouts { get; set; }
+
         public DbSet<Ranking> Rankings { get; set; }
 
         public DbSet<Champion> Champions { get; set; }
 
         public DbSet<Record> Records { get; set; }
-
-        public DbSet<HallOfFame> HallOfFame { get; set; }
 
         public DbSet<News> News { get; set; }
 
@@ -65,10 +63,9 @@
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<BoxerBout>(entity =>
-            {
-                entity.HasKey(x => new { x.BoutId, x.BoxerId});
-            });
+            builder.Entity<Record>()
+            .HasOne(a => a.Boxer)
+            .WithOne(s => s.Record);
 
             // Needed for Identity models configuration
             base.OnModelCreating(builder);

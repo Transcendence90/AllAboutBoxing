@@ -1,6 +1,5 @@
 ﻿namespace AllAboutBoxing.Data.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -11,8 +10,7 @@
     {
         public Boxer()
         {
-            this.HomeBouts = new HashSet<Bout>();
-            this.AwayBouts = new HashSet<Bout>();
+            this.Bouts = new HashSet<BoxerBout>();
         }
 
         [Required]
@@ -21,23 +19,25 @@
 
         public string Description { get; set; }
 
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
         [MaxLength(50)]
         public string Alias { get; set; }
 
+        [ForeignKey(nameof(WeightClass))]
         public int WeightClassId { get; set; }
 
-        public WeightClass WeightClass { get; set; }
-
-        public int BoutId { get; set; }
-
-        public Bout Bout { get; set; }
+        public virtual WeightClass WeightClass { get; set; }
 
         [ForeignKey(nameof(Record))]
         public int RecordId { get; set; }
 
-        public Record Record { get; set; }
+        public virtual Record Record { get; set; }
+
+        [ForeignKey(nameof(Champion))]
+        public int? ChampionId { get; set; }
+
+        public virtual Champion Champion { get; set; }
 
         public bool IsActive { get; set; }
 
@@ -45,20 +45,20 @@
 
         public int CountryId { get; set; }
 
-        public Country Country { get; set; }
+        public virtual Country Country { get; set; }
 
-        public string Stance { get; set; }
+        public string Residence { get; set; }
 
-        public DateTime Debut { get; set; }
+        public string Debut { get; set; }
+
+        public string BirthDate { get; set; }
+
+        public string DeathDate { get; set; }
 
         public string Height { get; set; }
 
         public string Reach { get; set; }
 
-        [InverseProperty("FirstBoxer")]
-        public virtual ICollection<Bout> HomeBouts { get; set; }
-
-        [InverseProperty("SecondBoxer")]
-        public virtual ICollection<Bout> AwayBouts { get; set; }
+        public virtual ICollection<BoxerBout> Bouts { get; set; }
     }
 }

@@ -1,13 +1,19 @@
-﻿namespace AllAboutBoxing.Data.Models
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AllAboutBoxing.Data.Models
 {
     public class BoxerBout
     {
-        public int BoutId { get; set; }
-
-        public Bout Bout { get; set; }
+        public int Id { get; set; }
 
         public int BoxerId { get; set; }
 
-        public Boxer Boxer { get; set; }
+        public virtual Boxer Boxer { get; set; }
+
+        public int BoutId { get; set; }
+
+        public virtual Bout Bout { get; set; }
     }
 }

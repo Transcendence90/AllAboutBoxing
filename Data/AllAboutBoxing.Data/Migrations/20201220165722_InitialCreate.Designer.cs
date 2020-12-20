@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllAboutBoxing.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201212153831_InitialCreate")]
+    [Migration("20201220165722_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -148,14 +148,17 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BoutDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("BoxerId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("FirstBoxerId")
-                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
@@ -163,17 +166,11 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Place")
+                    b.Property<string>("OpponentName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PlayedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Rounds")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SecondBoxerId")
-                        .HasColumnType("int");
+                    b.Property<string>("Place")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WayOfFinish")
                         .HasColumnType("nvarchar(max)");
@@ -183,11 +180,9 @@ namespace AllAboutBoxing.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("FirstBoxerId");
+                    b.HasIndex("BoxerId");
 
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("SecondBoxerId");
 
                     b.HasIndex("WeightClassId");
 
@@ -201,15 +196,15 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Age")
+                    b.Property<int?>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("Alias")
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<int>("BoutId")
-                        .HasColumnType("int");
+                    b.Property<string>("BirthDate")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("ChampionId")
                         .HasColumnType("int");
@@ -220,17 +215,17 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Debut")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("DeathDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Debut")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("HallOfFameId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Height")
                         .HasColumnType("nvarchar(max)");
@@ -258,7 +253,7 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<int>("RecordId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Stance")
+                    b.Property<string>("Residence")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("WeightClassId")
@@ -266,17 +261,11 @@ namespace AllAboutBoxing.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BoutId");
-
                     b.HasIndex("ChampionId");
 
                     b.HasIndex("CountryId");
 
-                    b.HasIndex("HallOfFameId");
-
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("RecordId");
 
                     b.HasIndex("WeightClassId");
 
@@ -285,13 +274,20 @@ namespace AllAboutBoxing.Data.Migrations
 
             modelBuilder.Entity("AllAboutBoxing.Data.Models.BoxerBout", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<int>("BoutId")
                         .HasColumnType("int");
 
                     b.Property<int>("BoxerId")
                         .HasColumnType("int");
 
-                    b.HasKey("BoutId", "BoxerId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("BoutId");
 
                     b.HasIndex("BoxerId");
 
@@ -304,9 +300,6 @@ namespace AllAboutBoxing.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("BoxerId")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -323,16 +316,9 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<string>("Organization")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("WeightClassId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("BoxerId");
-
                     b.HasIndex("IsDeleted");
-
-                    b.HasIndex("WeightClassId");
 
                     b.ToTable("Champions");
                 });
@@ -372,32 +358,6 @@ namespace AllAboutBoxing.Data.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("AllAboutBoxing.Data.Models.HallOfFame", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.ToTable("HallOfFame");
-                });
-
             modelBuilder.Entity("AllAboutBoxing.Data.Models.News", b =>
                 {
                     b.Property<int>("Id")
@@ -432,9 +392,6 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BoxerId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -448,8 +405,6 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BoxerId");
 
                     b.HasIndex("WeightClassId");
 
@@ -466,34 +421,13 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<int>("BoxerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("Draws")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Knockouts")
-                        .HasColumnType("int");
-
-                    b.Property<int>("KnockoutsPercentage")
                         .HasColumnType("int");
 
                     b.Property<int>("Loses")
                         .HasColumnType("int");
 
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
                     b.Property<int?>("NoContests")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RoundsPlayed")
                         .HasColumnType("int");
 
                     b.Property<int>("Wins")
@@ -501,9 +435,8 @@ namespace AllAboutBoxing.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BoxerId");
-
-                    b.HasIndex("IsDeleted");
+                    b.HasIndex("BoxerId")
+                        .IsUnique();
 
                     b.ToTable("Records");
                 });
@@ -649,15 +582,9 @@ namespace AllAboutBoxing.Data.Migrations
 
             modelBuilder.Entity("AllAboutBoxing.Data.Models.Bout", b =>
                 {
-                    b.HasOne("AllAboutBoxing.Data.Models.Boxer", "FirstBoxer")
-                        .WithMany("HomeBouts")
-                        .HasForeignKey("FirstBoxerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("AllAboutBoxing.Data.Models.Boxer", "SecondBoxer")
-                        .WithMany("AwayBouts")
-                        .HasForeignKey("SecondBoxerId")
+                    b.HasOne("AllAboutBoxing.Data.Models.Boxer", "Boxer")
+                        .WithMany()
+                        .HasForeignKey("BoxerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -670,29 +597,13 @@ namespace AllAboutBoxing.Data.Migrations
 
             modelBuilder.Entity("AllAboutBoxing.Data.Models.Boxer", b =>
                 {
-                    b.HasOne("AllAboutBoxing.Data.Models.Bout", "Bout")
-                        .WithMany()
-                        .HasForeignKey("BoutId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("AllAboutBoxing.Data.Models.Champion", null)
+                    b.HasOne("AllAboutBoxing.Data.Models.Champion", "Champion")
                         .WithMany("Champions")
                         .HasForeignKey("ChampionId");
 
                     b.HasOne("AllAboutBoxing.Data.Models.Country", "Country")
-                        .WithMany()
+                        .WithMany("Boxers")
                         .HasForeignKey("CountryId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("AllAboutBoxing.Data.Models.HallOfFame", null)
-                        .WithMany("HallOfFameBoxers")
-                        .HasForeignKey("HallOfFameId");
-
-                    b.HasOne("AllAboutBoxing.Data.Models.Record", "Record")
-                        .WithMany()
-                        .HasForeignKey("RecordId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -712,35 +623,14 @@ namespace AllAboutBoxing.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("AllAboutBoxing.Data.Models.Boxer", "Boxer")
-                        .WithMany()
+                        .WithMany("Bouts")
                         .HasForeignKey("BoxerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("AllAboutBoxing.Data.Models.Champion", b =>
-                {
-                    b.HasOne("AllAboutBoxing.Data.Models.Boxer", "Boxer")
-                        .WithMany()
-                        .HasForeignKey("BoxerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("AllAboutBoxing.Data.Models.WeightClass", "WeightClass")
-                        .WithMany()
-                        .HasForeignKey("WeightClassId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
             modelBuilder.Entity("AllAboutBoxing.Data.Models.Ranking", b =>
                 {
-                    b.HasOne("AllAboutBoxing.Data.Models.Boxer", "Boxer")
-                        .WithMany()
-                        .HasForeignKey("BoxerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("AllAboutBoxing.Data.Models.WeightClass", "WeightClass")
                         .WithMany()
                         .HasForeignKey("WeightClassId")
@@ -751,8 +641,8 @@ namespace AllAboutBoxing.Data.Migrations
             modelBuilder.Entity("AllAboutBoxing.Data.Models.Record", b =>
                 {
                     b.HasOne("AllAboutBoxing.Data.Models.Boxer", "Boxer")
-                        .WithMany()
-                        .HasForeignKey("BoxerId")
+                        .WithOne("Record")
+                        .HasForeignKey("AllAboutBoxing.Data.Models.Record", "BoxerId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

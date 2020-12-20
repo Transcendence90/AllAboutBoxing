@@ -6,23 +6,19 @@
 
     public class Bout : BaseDeletableModel<int>
     {
-        public int FirstBoxerId { get; set; }
+        public int BoxerId { get; set; }
 
-        public Boxer FirstBoxer { get; set; }
+        public Boxer Boxer { get; set; }
 
-        public int SecondBoxerId { get; set; }
-
-        public Boxer SecondBoxer { get; set; }
+        public string OpponentName { get; set; }
 
         public int WeightClassId { get; set; }
 
         public WeightClass WeightClass { get; set; }
 
-        public int Rounds { get; set; }
-
         public string WayOfFinish { get; set; }
 
-        public DateTime PlayedOn { get; set; }
+        public string BoutDate { get; set; }
 
         public string Place { get; set; }
     }

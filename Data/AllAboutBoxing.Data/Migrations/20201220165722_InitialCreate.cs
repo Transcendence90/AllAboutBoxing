@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace AllAboutBoxing.Data.Migrations
+﻿namespace AllAboutBoxing.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +19,7 @@ namespace AllAboutBoxing.Data.Migrations
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true)
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -55,6 +56,23 @@ namespace AllAboutBoxing.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Champions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    IsDeleted = table.Column<bool>(nullable: false),
+                    DeletedOn = table.Column<DateTime>(nullable: true),
+                    Organization = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Champions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Countries",
                 columns: table => new
                 {
@@ -71,22 +89,6 @@ namespace AllAboutBoxing.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Countries", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "HallOfFame",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
-                    ModifiedOn = table.Column<DateTime>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_HallOfFame", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -243,24 +245,30 @@ namespace AllAboutBoxing.Data.Migrations
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(maxLength: 50, nullable: false),
                     Description = table.Column<string>(nullable: true),
-                    Age = table.Column<int>(nullable: false),
+                    Age = table.Column<int>(nullable: true),
                     Alias = table.Column<string>(maxLength: 50, nullable: true),
                     WeightClassId = table.Column<int>(nullable: false),
-                    BoutId = table.Column<int>(nullable: false),
                     RecordId = table.Column<int>(nullable: false),
+                    ChampionId = table.Column<int>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
                     ImageUrl = table.Column<string>(nullable: true),
                     CountryId = table.Column<int>(nullable: false),
-                    Stance = table.Column<string>(nullable: true),
-                    Debut = table.Column<DateTime>(nullable: false),
+                    Residence = table.Column<string>(nullable: true),
+                    Debut = table.Column<string>(nullable: true),
+                    BirthDate = table.Column<string>(nullable: true),
+                    DeathDate = table.Column<string>(nullable: true),
                     Height = table.Column<string>(nullable: true),
-                    Reach = table.Column<string>(nullable: true),
-                    ChampionId = table.Column<int>(nullable: true),
-                    HallOfFameId = table.Column<int>(nullable: true)
+                    Reach = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Boxers", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Boxers_Champions_ChampionId",
+                        column: x => x.ChampionId,
+                        principalTable: "Champions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Boxers_Countries_CountryId",
                         column: x => x.CountryId,
@@ -268,13 +276,29 @@ namespace AllAboutBoxing.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Boxers_HallOfFame_HallOfFameId",
-                        column: x => x.HallOfFameId,
-                        principalTable: "HallOfFame",
+                        name: "FK_Boxers_WeightClasses_WeightClassId",
+                        column: x => x.WeightClassId,
+                        principalTable: "WeightClasses",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Rankings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CreatedOn = table.Column<DateTime>(nullable: false),
+                    ModifiedOn = table.Column<DateTime>(nullable: true),
+                    WeightClassId = table.Column<int>(nullable: false),
+                    Organization = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rankings", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Boxers_WeightClasses_WeightClassId",
+                        name: "FK_Rankings_WeightClasses_WeightClassId",
                         column: x => x.WeightClassId,
                         principalTable: "WeightClasses",
                         principalColumn: "Id",
@@ -291,26 +315,19 @@ namespace AllAboutBoxing.Data.Migrations
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    FirstBoxerId = table.Column<int>(nullable: false),
-                    SecondBoxerId = table.Column<int>(nullable: false),
+                    BoxerId = table.Column<int>(nullable: false),
+                    OpponentName = table.Column<string>(nullable: true),
                     WeightClassId = table.Column<int>(nullable: false),
-                    Rounds = table.Column<int>(nullable: false),
                     WayOfFinish = table.Column<string>(nullable: true),
-                    PlayedOn = table.Column<DateTime>(nullable: false),
+                    BoutDate = table.Column<string>(nullable: true),
                     Place = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Bouts", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Bouts_Boxers_FirstBoxerId",
-                        column: x => x.FirstBoxerId,
-                        principalTable: "Boxers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Bouts_Boxers_SecondBoxerId",
-                        column: x => x.SecondBoxerId,
+                        name: "FK_Bouts_Boxers_BoxerId",
+                        column: x => x.BoxerId,
                         principalTable: "Boxers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -323,83 +340,16 @@ namespace AllAboutBoxing.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Champions",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
-                    ModifiedOn = table.Column<DateTime>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true),
-                    WeightClassId = table.Column<int>(nullable: false),
-                    BoxerId = table.Column<int>(nullable: false),
-                    Organization = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Champions", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Champions_Boxers_BoxerId",
-                        column: x => x.BoxerId,
-                        principalTable: "Boxers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Champions_WeightClasses_WeightClassId",
-                        column: x => x.WeightClassId,
-                        principalTable: "WeightClasses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Rankings",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
-                    ModifiedOn = table.Column<DateTime>(nullable: true),
-                    WeightClassId = table.Column<int>(nullable: false),
-                    BoxerId = table.Column<int>(nullable: false),
-                    Organization = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Rankings", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Rankings_Boxers_BoxerId",
-                        column: x => x.BoxerId,
-                        principalTable: "Boxers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Rankings_WeightClasses_WeightClassId",
-                        column: x => x.WeightClassId,
-                        principalTable: "WeightClasses",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Records",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedOn = table.Column<DateTime>(nullable: false),
-                    ModifiedOn = table.Column<DateTime>(nullable: true),
-                    IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true),
                     BoxerId = table.Column<int>(nullable: false),
                     Wins = table.Column<int>(nullable: false),
                     Loses = table.Column<int>(nullable: false),
                     Draws = table.Column<int>(nullable: false),
-                    NoContests = table.Column<int>(nullable: true),
-                    Knockouts = table.Column<int>(nullable: false),
-                    KnockoutsPercentage = table.Column<int>(nullable: false),
-                    RoundsPlayed = table.Column<int>(nullable: false)
+                    NoContests = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -416,12 +366,14 @@ namespace AllAboutBoxing.Data.Migrations
                 name: "BoxersBouts",
                 columns: table => new
                 {
-                    BoutId = table.Column<int>(nullable: false),
-                    BoxerId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BoxerId = table.Column<int>(nullable: false),
+                    BoutId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BoxersBouts", x => new { x.BoutId, x.BoxerId });
+                    table.PrimaryKey("PK_BoxersBouts", x => x.Id);
                     table.ForeignKey(
                         name: "FK_BoxersBouts_Bouts_BoutId",
                         column: x => x.BoutId,
@@ -486,9 +438,9 @@ namespace AllAboutBoxing.Data.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bouts_FirstBoxerId",
+                name: "IX_Bouts_BoxerId",
                 table: "Bouts",
-                column: "FirstBoxerId");
+                column: "BoxerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Bouts_IsDeleted",
@@ -496,19 +448,9 @@ namespace AllAboutBoxing.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Bouts_SecondBoxerId",
-                table: "Bouts",
-                column: "SecondBoxerId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Bouts_WeightClassId",
                 table: "Bouts",
                 column: "WeightClassId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Boxers_BoutId",
-                table: "Boxers",
-                column: "BoutId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Boxers_ChampionId",
@@ -521,19 +463,9 @@ namespace AllAboutBoxing.Data.Migrations
                 column: "CountryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Boxers_HallOfFameId",
-                table: "Boxers",
-                column: "HallOfFameId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Boxers_IsDeleted",
                 table: "Boxers",
                 column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Boxers_RecordId",
-                table: "Boxers",
-                column: "RecordId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Boxers_WeightClassId",
@@ -541,13 +473,13 @@ namespace AllAboutBoxing.Data.Migrations
                 column: "WeightClassId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BoxersBouts_BoxerId",
+                name: "IX_BoxersBouts_BoutId",
                 table: "BoxersBouts",
-                column: "BoxerId");
+                column: "BoutId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Champions_BoxerId",
-                table: "Champions",
+                name: "IX_BoxersBouts_BoxerId",
+                table: "BoxersBouts",
                 column: "BoxerId");
 
             migrationBuilder.CreateIndex(
@@ -556,24 +488,9 @@ namespace AllAboutBoxing.Data.Migrations
                 column: "IsDeleted");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Champions_WeightClassId",
-                table: "Champions",
-                column: "WeightClassId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Countries_IsDeleted",
                 table: "Countries",
                 column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_HallOfFame_IsDeleted",
-                table: "HallOfFame",
-                column: "IsDeleted");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Rankings_BoxerId",
-                table: "Rankings",
-                column: "BoxerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Rankings_WeightClassId",
@@ -583,61 +500,17 @@ namespace AllAboutBoxing.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Records_BoxerId",
                 table: "Records",
-                column: "BoxerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Records_IsDeleted",
-                table: "Records",
-                column: "IsDeleted");
+                column: "BoxerId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_WeightClasses_IsDeleted",
                 table: "WeightClasses",
                 column: "IsDeleted");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Boxers_Bouts_BoutId",
-                table: "Boxers",
-                column: "BoutId",
-                principalTable: "Bouts",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Boxers_Champions_ChampionId",
-                table: "Boxers",
-                column: "ChampionId",
-                principalTable: "Champions",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Boxers_Records_RecordId",
-                table: "Boxers",
-                column: "RecordId",
-                principalTable: "Records",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Bouts_Boxers_FirstBoxerId",
-                table: "Bouts");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Bouts_Boxers_SecondBoxerId",
-                table: "Bouts");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Champions_Boxers_BoxerId",
-                table: "Champions");
-
-            migrationBuilder.DropForeignKey(
-                name: "FK_Records_Boxers_BoxerId",
-                table: "Records");
-
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -663,28 +536,25 @@ namespace AllAboutBoxing.Data.Migrations
                 name: "Rankings");
 
             migrationBuilder.DropTable(
+                name: "Records");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Boxers");
+                name: "Bouts");
 
             migrationBuilder.DropTable(
-                name: "Bouts");
+                name: "Boxers");
 
             migrationBuilder.DropTable(
                 name: "Champions");
 
             migrationBuilder.DropTable(
                 name: "Countries");
-
-            migrationBuilder.DropTable(
-                name: "HallOfFame");
-
-            migrationBuilder.DropTable(
-                name: "Records");
 
             migrationBuilder.DropTable(
                 name: "WeightClasses");
