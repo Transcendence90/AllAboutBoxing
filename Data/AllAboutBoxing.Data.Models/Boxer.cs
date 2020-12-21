@@ -10,7 +10,7 @@
     {
         public Boxer()
         {
-            this.Bouts = new HashSet<BoxerBout>();
+            this.Bouts = new HashSet<Bout>();
         }
 
         [Required]
@@ -59,6 +59,6 @@
 
         public string Reach { get; set; }
 
-        public virtual ICollection<BoxerBout> Bouts { get; set; }
+        public virtual ICollection<Bout> Bouts { get; set; }
     }
 }

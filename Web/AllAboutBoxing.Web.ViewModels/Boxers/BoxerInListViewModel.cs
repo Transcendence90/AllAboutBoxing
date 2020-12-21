@@ -7,5 +7,7 @@
         public string BoxerImageUrl { get; set; }
 
         public string BoxerName { get; set; }
+
+        public string CountryFlagUrl { get; set; }
     }
 }

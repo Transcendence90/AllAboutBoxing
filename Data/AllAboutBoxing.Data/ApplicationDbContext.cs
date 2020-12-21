@@ -32,8 +32,6 @@
 
         public DbSet<Bout> Bouts { get; set; }
 
-        public DbSet<BoxerBout> BoxersBouts { get; set; }
-
         public DbSet<Ranking> Rankings { get; set; }
 
         public DbSet<Champion> Champions { get; set; }

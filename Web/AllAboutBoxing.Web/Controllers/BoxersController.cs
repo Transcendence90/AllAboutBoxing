@@ -26,5 +26,11 @@
 
             return this.View(viewModel);
         }
+
+        public IActionResult ById(int id)
+        {
+            var boxer = this.boxersService.GetById<SingleBoxerViewModel>(id);
+            return this.View(boxer);
+        }
     }
 }

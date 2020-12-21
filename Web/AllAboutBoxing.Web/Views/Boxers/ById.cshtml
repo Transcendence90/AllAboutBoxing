@@ -1,0 +1,48 @@
+﻿@model AllAboutBoxing.Web.ViewModels.Boxers.SingleBoxerViewModel
+@{
+    this.ViewData["Title"] = @Model.Name;
+}
+
+<h1>@this.ViewData["Titlе"]</h1>
+<hr />
+
+<div class="single-fighter">
+
+    <img src="@Model.ImageUrl" class="single-fighter-img">
+    <ul>
+        <li class="hightlight full-record">
+            <h1>@Model.Name</h1>
+        </li>
+        <li>
+            <span>@Model.Record.Wins-@Model.Record.Loses-@Model.Record.Draws</span>
+        </li>
+    </ul>
+    <ul>
+        <li class="hightlight full-record">Stats</li>
+        <li>
+            <span class="red-box">Age </span><span class="f-desc">@Model.Age</span>
+        </li>
+        <li>
+            <span class="red-box">Height </span><span class="f-desc">
+                @Model.Height
+            </span>
+        </li>
+        <li>
+            <span class="red-box">Reach </span><span class="f-desc">
+                @Model.Reach
+            </span>
+        </li>
+        <li class="hightlight full-record">Full record</li>
+        <li>
+            <span class="red-box">Wins </span><span class="f-desc">@Model.Record.Wins</span>
+        </li>
+        <li>
+            <span class="red-box">Lost </span><span class="f-desc">@Model.Record.Loses</span>
+        </li>
+        <li><span class="red-box">Draws </span><span class="f-desc">@Model.Record.Draws</span></li>
+        <li><span class="red-box">Debut </span><span class="f-desc">@Model.Debut</span></li>
+    </ul>
+</div>
+<div>
+    <p>@Model.Description</p>
+</div>

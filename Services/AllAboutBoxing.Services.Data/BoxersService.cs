@@ -5,13 +5,15 @@
 
     using AllAboutBoxing.Data.Common.Repositories;
     using AllAboutBoxing.Data.Models;
+    using AllAboutBoxing.Services.Mapping;
     using AllAboutBoxing.Web.ViewModels.Boxers;
 
     public class BoxersService : IBoxersService
     {
         private readonly IDeletableEntityRepository<Boxer> boxersRepository;
 
-        public BoxersService(IDeletableEntityRepository<Boxer> boxersRepository)
+        public BoxersService(
+            IDeletableEntityRepository<Boxer> boxersRepository)
         {
             this.boxersRepository = boxersRepository;
         }
@@ -26,9 +28,19 @@
                     Id = x.Id,
                     BoxerName = x.Name,
                     BoxerImageUrl = x.ImageUrl,
+                    CountryFlagUrl = x.Country.FlagUrl,
                 }).ToList();
 
             return boxers;
+        }
+
+        public T GetById<T>(int id)
+        {
+            var boxer = this.boxersRepository.AllAsNoTracking()
+                .Where(x => x.Id == id)
+                .To<T>().FirstOrDefault();
+
+            return boxer;
         }
 
         public int GetCount()

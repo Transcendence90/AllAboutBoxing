@@ -1,7 +1,7 @@
 ﻿namespace AllAboutBoxing.Data.Models
 {
     using System;
-
+    using System.ComponentModel.DataAnnotations;
     using AllAboutBoxing.Data.Common.Models;
 
     public class Bout : BaseDeletableModel<int>
@@ -21,5 +21,8 @@
         public string BoutDate { get; set; }
 
         public string Place { get; set; }
+
+        [MaxLength(500)]
+        public string TitlesInFight { get; set; }
     }
 }
