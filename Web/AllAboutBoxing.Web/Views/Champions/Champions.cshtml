@@ -9,12 +9,11 @@
 
 @foreach (var champion in Model.Champions)
 {
-    <div class="text-center">
-        <h2>@champion.ChampionName</h2>
-        <div class="row">
-            <div class="col-md-12 text-center text-primary dark">@champion.WeightLimit</div>
-            <div class="col-md-12 text-center text-primary">@champion.Organization</div>
-        </div>
+    <div class="text-center list-group-item-info">
+        <h3 class="mt-0">
+            <a asp-action="ById" asp-route-id="@champion.Id">@champion.ChampionName  </a><span><img src="@champion.CountryFlagUrl"></span>
+        </h3>
+        <h3 class="col-md-12 text-center">@champion.Organization - @champion.WeightLimit</h3>
         <img src="@champion.ImageUrl" class="rounded mx-auto d-block">
     </div>
     <hr />

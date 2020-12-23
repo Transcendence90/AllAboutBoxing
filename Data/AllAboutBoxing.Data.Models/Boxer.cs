@@ -39,6 +39,11 @@
 
         public virtual Champion Champion { get; set; }
 
+        [ForeignKey(nameof(HallOfFame))]
+        public int? HallOfFameId { get; set; }
+
+        public virtual HallOfFame HallOfFame { get; set; }
+
         public bool IsActive { get; set; }
 
         public string ImageUrl { get; set; }

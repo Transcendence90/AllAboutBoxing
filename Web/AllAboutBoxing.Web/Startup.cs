@@ -67,6 +67,7 @@
             services.AddTransient<IWeightClassesService, WeightClassesService>();
             services.AddTransient<IBoxersService, BoxersService>();
             services.AddTransient<IChampionsService, ChampionsService>();
+            services.AddTransient<IHallOfFameService, HallOfFameService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -30,6 +30,8 @@
 
         public DbSet<WeightClass> WeightClasses { get; set; }
 
+        public DbSet<HallOfFame> HallOfFame { get; set; }
+
         public DbSet<Bout> Bouts { get; set; }
 
         public DbSet<Ranking> Rankings { get; set; }

@@ -4,7 +4,6 @@
 
     using AllAboutBoxing.Data.Models;
     using AllAboutBoxing.Services.Mapping;
-    using AutoMapper;
 
     public class SingleBoxerViewModel : IMapFrom<Boxer>
     {

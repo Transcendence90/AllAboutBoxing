@@ -9,7 +9,7 @@
         [ForeignKey(nameof(Boxer))]
         public int BoxerId { get; set; }
 
-        public Boxer Boxer { get; set; }
+        public virtual Boxer Boxer { get; set; }
 
         public int Wins { get; set; }
 
