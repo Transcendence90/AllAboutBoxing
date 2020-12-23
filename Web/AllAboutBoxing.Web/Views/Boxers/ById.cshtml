@@ -1,4 +1,5 @@
 ﻿@model AllAboutBoxing.Web.ViewModels.Boxers.SingleBoxerViewModel
+
 @{
     this.ViewData["Title"] = @Model.Name;
 }
@@ -6,43 +7,120 @@
 <h1>@this.ViewData["Titlе"]</h1>
 <hr />
 
-<div class="single-fighter">
-
-    <img src="@Model.ImageUrl" class="single-fighter-img">
-    <ul>
-        <li class="hightlight full-record">
-            <h1>@Model.Name</h1>
-        </li>
-        <li>
-            <span>@Model.Record.Wins-@Model.Record.Loses-@Model.Record.Draws</span>
-        </li>
-    </ul>
-    <ul>
-        <li class="hightlight full-record">Stats</li>
-        <li>
-            <span class="red-box">Age </span><span class="f-desc">@Model.Age</span>
-        </li>
-        <li>
-            <span class="red-box">Height </span><span class="f-desc">
-                @Model.Height
-            </span>
-        </li>
-        <li>
-            <span class="red-box">Reach </span><span class="f-desc">
-                @Model.Reach
-            </span>
-        </li>
-        <li class="hightlight full-record">Full record</li>
-        <li>
-            <span class="red-box">Wins </span><span class="f-desc">@Model.Record.Wins</span>
-        </li>
-        <li>
-            <span class="red-box">Lost </span><span class="f-desc">@Model.Record.Loses</span>
-        </li>
-        <li><span class="red-box">Draws </span><span class="f-desc">@Model.Record.Draws</span></li>
-        <li><span class="red-box">Debut </span><span class="f-desc">@Model.Debut</span></li>
-    </ul>
+<div>
+    <img src="@Model.ImageUrl" class="rounded mx-auto d-block">
+    <div>
+        <ul>
+            <li class="row col-md-8 table-success">
+                <h1 class="text-center">@Model.Name (@Model.Record.Wins-@Model.Record.Loses-@Model.Record.Draws) <img src="@Model.Country.FlagUrl" /></h1>
+            </li>
+        </ul>
+        <ul>
+            <li class="row col-md-6 table-dark font-weight-bold text-uppercase">Boxers profile</li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Status</span>
+                @if (Model.IsActive)
+                {
+                    <span class="col-md-5 table-success">Active</span>
+                }
+                else
+                {
+                    <span class="col-md-5 table-success">Inactive</span>
+                }
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Alias</span><span class="col-md-5 table-success">@Model.Alias</span>
+            </li>
+            @if (Model.IsActive)
+            {
+                <li class="row">
+                    <span class="col-md-1 table-danger">Age</span><span class="col-md-5 table-success">@Model.Age</span>
+                </li>
+            }
+            <li class="row">
+                <span class="col-md-1 table-danger">BirthDate</span><span class="col-md-5 table-success">@Model.BirthDate</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Height </span><span class="col-md-5 table-success">@Model.Height</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Reach </span><span class="col-md-5 table-success"> @Model.Reach</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Country</span><span class="col-md-5 table-success">@Model.Country.Name</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Residence</span><span class="col-md-5 table-success">@Model.Residence</span>
+            </li>
+            <li class="row col-md-6 table-dark font-weight-bold text-uppercase">Full record</li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Division</span><span class="col-md-5 table-success">@Model.WeightClass.Division</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Wins </span><span class="col-md-5 table-success">@Model.Record.Wins</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">By KO </span><span class="col-md-5 table-success">@Model.Record.Kos</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">KO% </span><span class="col-md-5 table-success">@Math.Ceiling((Model.Record.Kos) * 1.0 / (Model.Record.Wins) * 100)%</span>
+            </li>
+            <li class="row">
+                <span class="col-md-1 table-danger">Lost </span><span class="col-md-5 table-success">@Model.Record.Loses</span>
+            </li>
+            <li class="row"><span class="col-md-1 table-danger">Draws </span><span class="col-md-5 table-success">@Model.Record.Draws</span></li>
+            <li class="row"><span class="col-md-1 table-danger">Debut </span><span class="col-md-5 table-success">@Model.Debut</span></li>
+        </ul>
+    </div>
 </div>
+<hr />
+
 <div>
     <p>@Model.Description</p>
 </div>
+
+<hr />
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>BoutDate</th>
+            <th>OpponentName</th>
+            <th>BoutPlace</th>
+            <th>Titles</th>
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var bout in Model.Bouts.OrderByDescending(x => x.Id))
+        {
+            <tr>
+                <td class="d-inline-block text-truncate">
+                    @bout.BoutDate
+                </td>
+                <td>
+                    @bout.OpponentName
+                </td>
+                <td>
+                    @bout.Place
+                </td>
+                <td>
+                    @bout.TitlesInFight
+                </td>
+                <td>
+                    @if (bout.WayOfFinish.StartsWith("WIN"))
+                    {
+                        <span class="text-success">@bout.WayOfFinish</span>
+                    }
+                    else if (bout.WayOfFinish.StartsWith("LOSS"))
+                    {
+                        <span class="text-danger">@bout.WayOfFinish</span>
+                    }
+                    else
+                    {
+                        <span class="text-secondary">@bout.WayOfFinish</span>
+                    }
+                </td>
+            </tr>
+        }
+</table>

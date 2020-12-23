@@ -6,6 +6,8 @@
 
     public class BoxerBoutsViewModel : IMapFrom<Bout>
     {
+        public int Id { get; set; }
+
         public string OpponentName { get; set; }
 
         public string WayOfFinish { get; set; }

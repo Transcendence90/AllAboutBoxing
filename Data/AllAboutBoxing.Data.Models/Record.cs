@@ -17,6 +17,8 @@
 
         public int Draws { get; set; }
 
+        public int Kos { get; set; }
+
         public int? NoContests { get; set; }
     }
 }

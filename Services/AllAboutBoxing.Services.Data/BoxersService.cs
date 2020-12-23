@@ -21,7 +21,6 @@
         public IEnumerable<BoxerInListViewModel> GetAll(int page, int itemsPerPage = 12)
         {
             var boxers = this.boxersRepository.AllAsNoTracking()
-                .OrderByDescending(x => x.Id)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .Select(x => new BoxerInListViewModel
                 {

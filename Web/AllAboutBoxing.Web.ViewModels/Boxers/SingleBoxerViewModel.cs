@@ -14,6 +14,8 @@
 
         public virtual WeightClass WeightClass { get; set; }
 
+        public bool IsActive { get; set; }
+
         public string Residence { get; set; }
 
         public string ImageUrl { get; set; }
