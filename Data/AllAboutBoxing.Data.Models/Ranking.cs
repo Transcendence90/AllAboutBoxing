@@ -2,14 +2,17 @@
 {
 
     using AllAboutBoxing.Data.Common.Models;
-    using System.Collections.Generic;
 
     public class Ranking : BaseModel<int>
     {
         public int WeightClassId { get; set; }
 
-        public WeightClass WeightClass { get; set; }
+        public virtual WeightClass WeightClass { get; set; }
 
         public string Organization { get; set; }
+
+        public int Rank { get; set; }
+
+        public string BoxerName { get; set; }
     }
 }

@@ -43,7 +43,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Administration\Views\Dashboard\" />
-    <Folder Include="Views\News\" />
   </ItemGroup>
 
   <ItemGroup>

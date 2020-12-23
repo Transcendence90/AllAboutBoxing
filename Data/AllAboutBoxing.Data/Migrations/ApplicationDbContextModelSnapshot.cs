@@ -165,17 +165,21 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("OpponentName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("Place")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TitlesInFight")
-                        .HasColumnType("nvarchar(500)")
-                        .HasMaxLength(500);
+                        .HasColumnType("nvarchar(300)")
+                        .HasMaxLength(300);
 
                     b.Property<string>("WayOfFinish")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<int>("WeightClassId")
                         .HasColumnType("int");
@@ -233,9 +237,12 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Height")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("ImageUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsActive")
@@ -253,7 +260,9 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasMaxLength(50);
 
                     b.Property<string>("Reach")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("RecordId")
                         .HasColumnType("int");
@@ -386,15 +395,22 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Url")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OriginalUrl")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -475,7 +491,9 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Division")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Established")
                         .HasColumnType("int");
@@ -487,7 +505,9 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("WeightLimit")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 

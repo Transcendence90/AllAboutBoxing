@@ -1,6 +1,7 @@
 ﻿namespace AllAboutBoxing.Data.Models
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     using AllAboutBoxing.Data.Common.Models;
 
@@ -11,10 +12,15 @@
             this.Boxers = new HashSet<Boxer>();
         }
 
+        [Required]
+        [MaxLength(50)]
         public string Division { get; set; }
 
+        [Required]
+        [MaxLength(50)]
         public string WeightLimit { get; set; }
 
+        [Required]
         public int Established { get; set; }
 
         public virtual ICollection<Boxer> Boxers { get; set; }

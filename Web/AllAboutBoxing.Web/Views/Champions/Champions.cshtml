@@ -3,6 +3,10 @@
     this.ViewData["Title"] = "Champions";
 }
 
+@section Styles{ 
+<link rel="stylesheet" href="~/css/HighChart/Index.css"/>
+}
+
 <h1 class="text-center">@this.ViewData["Title"]</h1>
 
 <hr />
@@ -17,4 +21,30 @@
         <img src="@champion.ImageUrl" class="rounded mx-auto d-block">
     </div>
     <hr />
+}
+
+<div class="buttons">
+    <button id="2000">
+        2000
+    </button>
+    <button id="2004">
+        2004
+    </button>
+    <button id="2008">
+        2008
+    </button>
+    <button id="2012">
+        2012
+    </button>
+    <button id="2016" class="active">
+        2016
+    </button>
+</div>
+<div id="container"></div>
+
+@section Scripts{
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="~/js/HighCharts/Index.js"></script>
 }

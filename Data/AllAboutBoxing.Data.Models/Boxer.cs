@@ -24,11 +24,13 @@
         [MaxLength(50)]
         public string Alias { get; set; }
 
+        [Required]
         [ForeignKey(nameof(WeightClass))]
         public int WeightClassId { get; set; }
 
         public virtual WeightClass WeightClass { get; set; }
 
+        [Required]
         [ForeignKey(nameof(Record))]
         public int RecordId { get; set; }
 
@@ -44,8 +46,10 @@
 
         public virtual HallOfFame HallOfFame { get; set; }
 
+        [Required]
         public bool IsActive { get; set; }
 
+        [Required]
         public string ImageUrl { get; set; }
 
         public int CountryId { get; set; }
@@ -60,8 +64,12 @@
 
         public string DeathDate { get; set; }
 
+        [Required]
+        [MaxLength(50)]
         public string Height { get; set; }
 
+        [Required]
+        [MaxLength(50)]
         public string Reach { get; set; }
 
         public virtual ICollection<Bout> Bouts { get; set; }

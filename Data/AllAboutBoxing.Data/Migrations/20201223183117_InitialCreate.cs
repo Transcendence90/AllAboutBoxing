@@ -117,9 +117,10 @@
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
-                    Url = table.Column<string>(nullable: true),
-                    ImageUrl = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    OriginalUrl = table.Column<string>(nullable: false),
+                    ImageUrl = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -136,8 +137,8 @@
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Division = table.Column<string>(nullable: true),
-                    WeightLimit = table.Column<string>(nullable: true),
+                    Division = table.Column<string>(maxLength: 50, nullable: false),
+                    WeightLimit = table.Column<string>(maxLength: 50, nullable: false),
                     Established = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -270,14 +271,14 @@
                     ChampionId = table.Column<int>(nullable: true),
                     HallOfFameId = table.Column<int>(nullable: true),
                     IsActive = table.Column<bool>(nullable: false),
-                    ImageUrl = table.Column<string>(nullable: true),
+                    ImageUrl = table.Column<string>(nullable: false),
                     CountryId = table.Column<int>(nullable: false),
                     Residence = table.Column<string>(nullable: true),
                     Debut = table.Column<string>(nullable: true),
                     BirthDate = table.Column<string>(nullable: true),
                     DeathDate = table.Column<string>(nullable: true),
-                    Height = table.Column<string>(nullable: true),
-                    Reach = table.Column<string>(nullable: true)
+                    Height = table.Column<string>(maxLength: 50, nullable: false),
+                    Reach = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -341,12 +342,12 @@
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     BoxerId = table.Column<int>(nullable: false),
-                    OpponentName = table.Column<string>(nullable: true),
+                    OpponentName = table.Column<string>(maxLength: 50, nullable: false),
                     WeightClassId = table.Column<int>(nullable: false),
-                    WayOfFinish = table.Column<string>(nullable: true),
+                    WayOfFinish = table.Column<string>(maxLength: 20, nullable: false),
                     BoutDate = table.Column<string>(nullable: true),
                     Place = table.Column<string>(nullable: true),
-                    TitlesInFight = table.Column<string>(maxLength: 500, nullable: true)
+                    TitlesInFight = table.Column<string>(maxLength: 300, nullable: true)
                 },
                 constraints: table =>
                 {

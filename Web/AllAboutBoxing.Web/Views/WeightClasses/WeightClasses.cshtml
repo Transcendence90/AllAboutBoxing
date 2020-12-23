@@ -1,11 +1,17 @@
 ﻿@model AllAboutBoxing.Web.ViewModels.WeightClasses.WeightClassesListViewModel
-@{ 
+@{
     this.ViewData["Title"] = "Weightclasses";
 }
 
-<div class="text-center">
-    <h1>@this.ViewData["Title"]</h1>
-    <hr />
+<h1 class="text-center">@this.ViewData["Title"]</h1>
+
+<hr />
+<p>A weight division in boxing represents a weight limit for boxers competing in a fight. Fights are usually scheduled for the fighters to compete in a specific weight class. They must not exceed the limit of the specified weight class on the day of the official weigh-in, usually occurring one day before the fight.</p>
+<p>As of 2020, 17 weight divisions in professional boxing are recognized by the four main boxing sanctioning bodies. Different sanctioning bodies can use different names for some of the divisions.</p>
+<p>The official 17 weight divisions along with the weight limits in pounds (most commonly used in the US), kilograms (Europe and rest of the world) and stones (commonly used in the UK for human body weight) within which boxers can compete in.</p>
+<hr />
+
+<div class="text-center font-weight-bold">
     <table class="table">
         <thead class="thead-dark">
             <tr>
@@ -17,7 +23,7 @@
         <tbody>
             @foreach (var weightClass in Model.WeightClasses)
             {
-                <tr class="table-primary">
+                <tr class="table-active">
                     <td>
                         @weightClass.Division
                     </td>
