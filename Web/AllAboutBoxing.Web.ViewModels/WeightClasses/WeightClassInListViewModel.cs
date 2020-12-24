@@ -2,6 +2,8 @@
 {
     public class WeightClassInListViewModel
     {
+        public int Id { get; set; }
+
         public string Division { get; set; }
 
         public string Weightlimit { get; set; }

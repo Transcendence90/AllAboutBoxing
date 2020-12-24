@@ -9,6 +9,7 @@
 <p>A weight division in boxing represents a weight limit for boxers competing in a fight. Fights are usually scheduled for the fighters to compete in a specific weight class. They must not exceed the limit of the specified weight class on the day of the official weigh-in, usually occurring one day before the fight.</p>
 <p>As of 2020, 17 weight divisions in professional boxing are recognized by the four main boxing sanctioning bodies. Different sanctioning bodies can use different names for some of the divisions.</p>
 <p>The official 17 weight divisions along with the weight limits in pounds (most commonly used in the US), kilograms (Europe and rest of the world) and stones (commonly used in the UK for human body weight) within which boxers can compete in.</p>
+<p>Click the weight name to view our overview of each division, where you can learn about its origins, history and notable champions of the past.</p>
 <hr />
 
 <div class="text-center font-weight-bold">
@@ -23,9 +24,9 @@
         <tbody>
             @foreach (var weightClass in Model.WeightClasses)
             {
-                <tr class="table-active">
+                <tr class="table-active">                       
                     <td>
-                        @weightClass.Division
+                        <a class="text-body font-weight-bold" asp-action="WeightClassById" asp-route-id="@weightClass.Id">@weightClass.Division</a>                       
                     </td>
                     <td>
                         @weightClass.Weightlimit

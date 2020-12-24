@@ -139,7 +139,9 @@
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Division = table.Column<string>(maxLength: 50, nullable: false),
                     WeightLimit = table.Column<string>(maxLength: 50, nullable: false),
-                    Established = table.Column<int>(nullable: false)
+                    Established = table.Column<int>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    WeightClassUrlPic = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -318,7 +320,9 @@
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     WeightClassId = table.Column<int>(nullable: false),
-                    Organization = table.Column<string>(nullable: true)
+                    Organization = table.Column<string>(nullable: true),
+                    Rank = table.Column<int>(nullable: false),
+                    BoxerName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

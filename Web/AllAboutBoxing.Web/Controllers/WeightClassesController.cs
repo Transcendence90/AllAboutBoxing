@@ -22,5 +22,11 @@
 
             return this.View(viewModel);
         }
+
+        public IActionResult WeightClassById(int id)
+        {
+            var weightClass = this.weightClassesService.GetById<SingleWeightClassViewModel>(id);
+            return this.View(weightClass);
+        }
     }
 }

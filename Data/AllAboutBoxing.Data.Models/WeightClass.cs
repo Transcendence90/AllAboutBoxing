@@ -23,6 +23,10 @@
         [Required]
         public int Established { get; set; }
 
+        public string Description { get; set; }
+
+        public string WeightClassUrlPic { get; set; }
+
         public virtual ICollection<Boxer> Boxers { get; set; }
     }
 }

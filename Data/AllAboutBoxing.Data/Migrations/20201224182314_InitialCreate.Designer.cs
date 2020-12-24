@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllAboutBoxing.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201223183117_InitialCreate")]
+    [Migration("20201224182314_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -427,6 +427,9 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BoxerName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -435,6 +438,9 @@ namespace AllAboutBoxing.Data.Migrations
 
                     b.Property<string>("Organization")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rank")
+                        .HasColumnType("int");
 
                     b.Property<int>("WeightClassId")
                         .HasColumnType("int");
@@ -492,6 +498,9 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Division")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -505,6 +514,9 @@ namespace AllAboutBoxing.Data.Migrations
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("WeightClassUrlPic")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WeightLimit")
                         .IsRequired()

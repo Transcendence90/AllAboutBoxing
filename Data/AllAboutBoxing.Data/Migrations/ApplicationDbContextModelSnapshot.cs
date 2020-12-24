@@ -425,6 +425,9 @@ namespace AllAboutBoxing.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("BoxerName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -433,6 +436,9 @@ namespace AllAboutBoxing.Data.Migrations
 
                     b.Property<string>("Organization")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rank")
+                        .HasColumnType("int");
 
                     b.Property<int>("WeightClassId")
                         .HasColumnType("int");
@@ -490,6 +496,9 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Division")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
@@ -503,6 +512,9 @@ namespace AllAboutBoxing.Data.Migrations
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("WeightClassUrlPic")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("WeightLimit")
                         .IsRequired()

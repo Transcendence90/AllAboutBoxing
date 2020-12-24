@@ -1,0 +1,17 @@
+﻿@model AllAboutBoxing.Web.ViewModels.WeightClasses.SingleWeightClassViewModel
+@{
+    this.ViewData["Title"] = Model.Division;
+}
+
+<h1 class="text-center">@this.ViewData["Title"]</h1>
+
+<hr />
+<img class="mx-auto d-block" src="~/img/WeightClasses/@Model.Id@@.jpg">
+<hr />
+<div class="text-center">
+    <h4>Weight limit: @Model.Weightlimit</h4>
+    <h4>Year established: @Model.Established</h4>
+    <hr />
+</div>
+<p>@Model.Description</p>
+<hr />

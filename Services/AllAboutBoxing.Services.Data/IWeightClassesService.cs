@@ -7,5 +7,7 @@
     public interface IWeightClassesService
     {
         IEnumerable<WeightClassInListViewModel> GetAll();
+
+        T GetById<T>(int id);
     }
 }
