@@ -1,1 +1,51 @@
-﻿
+﻿@model AllAboutBoxing.Web.ViewModels.News.NewsListViewModel
+
+@{
+    this.ViewData["Title"] = "News";
+}
+
+@foreach (var news in Model.NewsList)
+{
+    <div class="list-group-item-dark text-center col-md-8">
+        <img class="float-md-left img-fluid" src="@news.ImageUrl" style="width:300px;height:200px;">
+        <div class="teaserContentWrap">
+            <div class="tools">
+            </div>
+            <h5><a class="text-body font-weight-bold" asp-action="NewsById" asp-route-id="@news.Id">@news.Name</a></h5>
+            <p>@news.DescriptionOnNewsPage ...</p>
+        </div>
+    </div>
+}
+
+<nav aria-label="...">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @if (!Model.HasPreviousPage)  { <text>disabled</text> }">
+            <a class="page-link" asp-action="News" asp-route-id="@Model.PreviousPageNumber">Previous</a>
+        </li>
+        @for (int i = Model.PageNumber - 2; i < Model.PageNumber; i++)
+        {
+            @if (i > 0)
+            {
+                <li class="page-item"><a class="page-link" asp-action="News" asp-route-id="@i">@i</a></li>
+            }
+        }
+
+        <li class="page-item active">
+            <span class="page-link">
+                @Model.PageNumber
+                <span class="sr-only">(current)</span>
+            </span>
+        </li>
+
+        @for (int i = Model.PageNumber + 1; i <= Model.PageNumber + 2; i++)
+        {
+            @if (i <= Model.PagesCount)
+            {
+                <li class="page-item"><a class="page-link" asp-action="News" asp-route-id="@i">@i</a></li>
+            }
+        }
+        <li class="page-item @if (!Model.HasNextPage)  { <text>disabled</text> }">
+            <a class="page-link" asp-action="News" asp-route-id="@Model.NextPageNumber">Next</a>
+        </li>
+    </ul>
+</nav>

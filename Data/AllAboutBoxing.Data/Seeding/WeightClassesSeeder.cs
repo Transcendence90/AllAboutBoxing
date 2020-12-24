@@ -38,7 +38,7 @@
                 Description = "Credit for creating the light heavyweight division goes to Chicago journalist and promoter Lou Houseman. He matched his fighter Jack Root against Kid McCoy for the inaugural light heavyweight championship. Root ended up victorious while becoming the first light heavyweight champion of the world. Officially it was established in 1909 by the National Sporting Club of London, with the present weight limit of 175 lb / 79.37 kg. During the 1980s, some historians found that Joe Choynski had fought against Jimmy Ryan in 1899 for the world light heavyweight championship. However, this claim is disputed. German-Polish boxer Dariusz Michalczewski holds the longest title reign with 23 title defenses. Notable light heavyweight champions throughout history: Georges Carpentier, Tommy Loughran, Billy Conn, Archie Moore, Bob Foster, Michael Spinks, Dariusz Michalczewski, Roy Jones Jr., Antonio Tarver, Joe Calzaghe, Bernard Hopkins.",
             });
             dbContext.WeightClasses.Add(new WeightClass
-            { 
+            {
                 Division = "Super Middleweight",
                 WeightLimit = "168 lb / 76.2 kg / 12 st",
                 Established = 1967,

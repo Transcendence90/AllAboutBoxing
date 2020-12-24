@@ -21,15 +21,14 @@
         public IEnumerable<WeightClassInListViewModel> GetAll()
         {
             var weightClasses = this.weightClassesRepository.AllAsNoTracking()
+                .OrderByDescending(x => x.WeightLimit)
                 .Select(x => new WeightClassInListViewModel
                 {
                     Id = x.Id,
                     Division = x.Division,
                     Weightlimit = x.WeightLimit,
                     Established = x.Established,
-                })
-                .OrderByDescending(x => x.Weightlimit)
-                .ToList();
+                });
 
             return weightClasses;
         }

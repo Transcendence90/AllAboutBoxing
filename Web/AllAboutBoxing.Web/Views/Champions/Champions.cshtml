@@ -14,8 +14,8 @@
 @foreach (var champion in Model.Champions)
 {
     <div class="text-center list-group-item-info">
-        <h3 class="mt-0">
-            <a asp-action="ById" asp-route-id="@champion.Id">@champion.ChampionName  </a><span><img src="@champion.CountryFlagUrl"></span>
+        <h3>
+            <a class="font-weight-bold" asp-action="ById" asp-route-id="@champion.Id">@champion.ChampionName  </a><span><img src="@champion.CountryFlagUrl"></span>
         </h3>
         <h3 class="col-md-12 text-center">@champion.Organization - @champion.WeightLimit</h3>
         <img src="@champion.ImageUrl" class="rounded mx-auto d-block">

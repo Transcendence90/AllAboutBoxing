@@ -1,0 +1,18 @@
+﻿@model AllAboutBoxing.Web.ViewModels.News.NewsViewModel
+@{
+    this.ViewData["Title"] = Model.Name;
+}
+
+<h1 class="text-center">@this.ViewData["Title"]</h1>
+
+<hr />
+
+<img class="mx-auto d-block" src="@Model.ImageUrl">
+<hr />
+<p class="text-center">Published On: @Model.PublishedOn.ToString("dd-MM-yyyy")</p>
+<div>
+    <p>@Model.Description</p>
+    <hr />
+</div>
+<p>Original source: @Model.OriginalUrl</p>
+<hr />

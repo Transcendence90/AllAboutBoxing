@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AllAboutBoxing.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201224182314_InitialCreate")]
+    [Migration("20201224201219_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -414,6 +414,9 @@ namespace AllAboutBoxing.Data.Migrations
                     b.Property<string>("OriginalUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("PublishedOn")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

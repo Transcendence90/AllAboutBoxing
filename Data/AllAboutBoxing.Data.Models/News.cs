@@ -1,5 +1,6 @@
 ﻿namespace AllAboutBoxing.Data.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
 
     using AllAboutBoxing.Data.Common.Models;
@@ -18,6 +19,6 @@
         [Required]
         public string ImageUrl { get; set; }
 
-
+        public DateTime PublishedOn { get; set; }
     }
 }

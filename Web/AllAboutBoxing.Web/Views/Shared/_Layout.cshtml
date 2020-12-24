@@ -24,22 +24,31 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="WeightClasses" asp-action="WeightClasses">WeightClasses</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Champions" asp-action="Champions">Champions</a>
+                            <div class="dropdown">
+                                <button class="btn btn-group dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Rankings
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Rankings" asp-action="Rankings">Rankings</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="WeightClasses" asp-action="WeightClasses">WeightClasses</a>
+                                </div>
+                            </div>
+                            
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Boxers" asp-action="All">Boxers</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Champions" asp-action="Champions"><i class="fas fa-crown"></i> Champions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="HallOfFame" asp-action="HallOfFame">HallOfFame</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Boxers" asp-action="All"><i class="fas fa-hand-rock"></i> Boxers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Privacy">News</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="HallOfFame" asp-action="HallOfFame"><i class="fas fa-archive"></i> HallOfFame</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="News"><i class="fas fa-globe-europe"></i> News</a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +67,6 @@
         <nav class="alert-dark">
             <div class="container">
                 &copy; @DateTime.Now.Year - ©AllAboutBoxing : data may be incomplete/inaccurate.  @GlobalConstants.SystemName - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy & Cookie Policy</a>
-                <a class="float-sm-right" asp-area="" asp-controller="Home" asp-action="Contacts">Contact Us</a>
             </div>            
         </nav>
     </footer>

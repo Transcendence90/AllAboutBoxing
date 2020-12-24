@@ -120,7 +120,8 @@
                     Name = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: false),
                     OriginalUrl = table.Column<string>(nullable: false),
-                    ImageUrl = table.Column<string>(nullable: false)
+                    ImageUrl = table.Column<string>(nullable: false),
+                    PublishedOn = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
