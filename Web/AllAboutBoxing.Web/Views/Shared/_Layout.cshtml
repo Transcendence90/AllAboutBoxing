@@ -36,7 +36,6 @@
                                     <a class="nav-link text-dark" asp-area="" asp-controller="WeightClasses" asp-action="WeightClasses">WeightClasses</a>
                                 </div>
                             </div>
-                            
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Champions" asp-action="Champions"><i class="fas fa-crown"></i> Champions</a>
@@ -44,9 +43,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Boxers" asp-action="All"><i class="fas fa-hand-rock"></i> Boxers</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="HallOfFame" asp-action="HallOfFame"><i class="fas fa-archive"></i> HallOfFame</a>
-                        </li>
+                        @if (this.User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="HallOfFame" asp-action="HallOfFame"><i class="fas fa-archive"></i> HallOfFame</a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="News"><i class="fas fa-globe-europe"></i> News</a>
                         </li>
