@@ -8,50 +8,55 @@
 <hr />
 
 <div>
-    <img src="@Model.ImageUrl" class="float-right">
+    <img src="@Model.ImageUrl" class="float-right" style="width:215px;height:300px;">
     <div class="text-center font-weight-bold">
         <h2 class="row col-md-8 d-inline-block">@Model.Name (@Model.Record.Wins-@Model.Record.Loses-@Model.Record.Draws) <img src="@Model.Country.FlagUrl" /></h2>
+
         <ul class="d-block">
-            <li class="row col-md-8 table-dark font-weight-bold text-uppercase">Boxers profile</li>
+            <li class="row col-md-8 table-dark font-weight-bold text-uppercase text-center">Boxers profile</li>
             <li class="row">
-                <span class="col-md-2 table-danger">Status</span>
+                <span class="col-md-2 bg-danger">Status</span>
                 @if (Model.IsActive)
                 {
-                    <span class="col-md-8 table-success">Active</span>
+                    <span class="col-md-8 bg-success">Active</span>
                 }
                 else
                 {
-                    <span class="col-md-8 table-success">Inactive</span>
+                    <span class="col-md-8 bg-success">Inactive</span>
                 }
             </li>
-            <li class="row"><span class="col-md-2 table-danger">Alias</span><span class="col-md-8 table-success">@Model.Alias</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Alias</span><span class="col-md-8 bg-success">@Model.Alias</span></li>
             @if (Model.IsActive)
             {
-                <li class="row"><span class="col-md-2 table-danger">Age</span><span class="col-md-8 table-success">@Model.Age</span></li>
+                <li class="row"><span class="col-md-2 bg-danger">Age</span><span class="col-md-8 bg-success">@Model.Age</span></li>
             }
-            <li class="row"><span class="col-md-2 table-danger">BirthDate</span><span class="col-md-8 table-success">@Model.BirthDate</span></li>
-            <li class="row"><span class="col-md-2 table-danger">Height </span><span class="col-md-8 table-success">@Model.Height</span></li>
-            <li class="row"><span class="col-md-2 table-danger">Reach </span><span class="col-md-8 table-success"> @Model.Reach</span></li>
-            <li class="row"><span class="col-md-2 table-danger">Country</span><span class="col-md-8 table-success">@Model.Country.Name</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">BirthDate</span><span class="col-md-8 bg-success">@Model.BirthDate</span></li>
+            @if (Model.DeathDate != null)
+            {
+                <li class="row"><span class="col-md-2 bg-danger">DeathDate</span><span class="col-md-8 bg-success">@Model.DeathDate</span></li>
+            }
+            <li class="row"><span class="col-md-2 bg-danger">Height </span><span class="col-md-8 bg-success">@Model.Height</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Reach </span><span class="col-md-8 bg-success"> @Model.Reach</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Country</span><span class="col-md-8 bg-success">@Model.Country.Name</span></li>
             @if (!Model.IsActive)
             {
-                <li class="row"><span class="col-md-2 table-danger">Residence</span><span class="col-md-8 table-success">@Model.Residence</span></li>
+                <li class="row"><span class="col-md-2 bg-danger">Residence</span><span class="col-md-8 bg-success">@Model.Residence</span></li>
             }
             else
             {
-                <li class="row"><span class="col-md-2 table-danger">Residence</span><span class="col-md-6 table-success">@Model.Residence</span></li>
+                <li class="row"><span class="col-md-2 bg-danger">Residence</span><span class="col-md-8 bg-success">@Model.Residence</span></li>
             }
         </ul>
         <hr />
         <ul>
             <li class="row col-md-8 table-dark font-weight-bold text-uppercase">Full record</li>
-            <li class="row"><span class="col-md-2 table-danger">Division</span><span class="col-md-6 table-success">@Model.WeightClass.Division</span></li>
-            <li class="row"><span class="col-md-2 table-danger">Wins </span><span class="col-md-6 table-success">@Model.Record.Wins</span></li>
-            <li class="row"><span class="col-md-2 table-danger">By KO </span><span class="col-md-6 table-success">@Model.Record.Kos</span></li>
-            <li class="row"><span class="col-md-2 table-danger">KO% </span><span class="col-md-6 table-success">@Math.Ceiling((Model.Record.Kos) * 1.0 / (Model.Record.Wins) * 100)%</span></li>
-            <li class="row"><span class="col-md-2 table-danger">Lost </span><span class="col-md-6 table-success">@Model.Record.Loses</span></li>
-            <li class="row"><span class="col-md-2 table-danger">Draws </span><span class="col-md-6 table-success">@Model.Record.Draws</span></li>
-            <li class="row"><span class="col-md-2 table-danger">Debut </span><span class="col-md-6 table-success">@Model.Debut</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Division</span><span class="col-md-6 bg-success">@Model.WeightClass.Division</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Wins </span><span class="col-md-6 bg-success">@Model.Record.Wins</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">By KO </span><span class="col-md-6 bg-success">@Model.Record.Kos</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">KO% </span><span class="col-md-6 bg-success">@Math.Ceiling((Model.Record.Kos) * 1.0 / (Model.Record.Wins) * 100)%</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Lost </span><span class="col-md-6 bg-success">@Model.Record.Loses</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Draws </span><span class="col-md-6 bg-success">@Model.Record.Draws</span></li>
+            <li class="row"><span class="col-md-2 bg-danger">Debut </span><span class="col-md-6 bg-success">@Model.Debut</span></li>
         </ul>
     </div>
 </div>

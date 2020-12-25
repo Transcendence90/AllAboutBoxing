@@ -23,6 +23,8 @@
 
         public string BirthDate { get; set; }
 
+        public string DeathDate { get; set; }
+
         public string Description { get; set; }
 
         public string Alias { get; set; }
