@@ -1,13 +1,8 @@
 ﻿namespace AllAboutBoxing.Web.ViewModels.Champions
 {
-
-    using AllAboutBoxing.Data.Models;
-
     public class ChampionInListViewModel
     {
         public int Id { get; set; }
-
-        public virtual Champion Champion { get; set; }
 
         public string ChampionName { get; set; }
 

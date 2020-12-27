@@ -20,6 +20,7 @@
         IEnumerable<NewsViewModel> INewsService.GetAllNews<T>(int page, int itemsPerPage)
         {
             var news = this.newsRepository.AllAsNoTracking()
+                .OrderByDescending(x => x.PublishedOn)
                 .Skip((page - 1) * itemsPerPage).Take(itemsPerPage)
                 .Select(x => new NewsViewModel
                 {
@@ -29,7 +30,8 @@
                     Description = x.Description,
                     DescriptionOnNewsPage = x.Description.Substring(0, 300),
                     PublishedOn = x.PublishedOn,
-                }).ToList();
+                })
+                .ToList();
 
             return news;
         }

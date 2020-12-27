@@ -16,9 +16,9 @@
         [Required]
         public string OriginalUrl { get; set; }
 
-        [Required]
         public string ImageUrl { get; set; }
 
+        [Required]
         public DateTime PublishedOn { get; set; }
     }
 }
