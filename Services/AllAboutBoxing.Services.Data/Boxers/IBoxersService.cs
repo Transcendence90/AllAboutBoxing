@@ -11,5 +11,7 @@
         int GetCount();
 
         T GetById<T>(int id);
+
+        T GetByName<T>(string name);
     }
 }

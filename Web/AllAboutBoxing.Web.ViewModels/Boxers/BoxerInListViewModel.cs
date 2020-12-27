@@ -1,12 +1,15 @@
 ﻿namespace AllAboutBoxing.Web.ViewModels.Boxers
 {
-    public class BoxerInListViewModel
+    using AllAboutBoxing.Data.Models;
+    using AllAboutBoxing.Services.Mapping;
+
+    public class BoxerInListViewModel : IMapFrom<Boxer>
     {
         public int Id { get; set; }
 
-        public string BoxerImageUrl { get; set; }
+        public string ImageUrl { get; set; }
 
-        public string BoxerName { get; set; }
+        public string Name { get; set; }
 
         public string CountryFlagUrl { get; set; }
     }

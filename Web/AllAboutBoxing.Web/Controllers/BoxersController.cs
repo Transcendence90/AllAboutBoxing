@@ -37,5 +37,17 @@
             var boxer = this.boxersService.GetById<SingleBoxerViewModel>(id);
             return this.View(boxer);
         }
+
+        public IActionResult SearchByName(string name)
+        {
+            var boxerViewModel = this.boxersService.GetByName<BoxerInListViewModel>(name);
+
+            if (boxerViewModel == null)
+            {
+                return this.Redirect("All");
+            }
+
+            return this.View(boxerViewModel);
+        }
     }
 }

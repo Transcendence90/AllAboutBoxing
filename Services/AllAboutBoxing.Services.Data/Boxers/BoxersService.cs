@@ -25,8 +25,8 @@
                 .Select(x => new BoxerInListViewModel
                 {
                     Id = x.Id,
-                    BoxerName = x.Name,
-                    BoxerImageUrl = x.ImageUrl,
+                    Name = x.Name,
+                    ImageUrl = x.ImageUrl,
                     CountryFlagUrl = x.Country.FlagUrl,
                 }).ToList();
 
@@ -37,6 +37,15 @@
         {
             var boxer = this.boxersRepository.AllAsNoTracking()
                 .Where(x => x.Id == id)
+                .To<T>().FirstOrDefault();
+
+            return boxer;
+        }
+
+        public T GetByName<T>(string name)
+        {
+            var boxer = this.boxersRepository.AllAsNoTracking()
+                .Where(x => x.Name == name)
                 .To<T>().FirstOrDefault();
 
             return boxer;
