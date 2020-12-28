@@ -5,21 +5,20 @@
     this.ViewData["Title"] = "Home Page";
 }
 
-<img class="img-thumbnail" src="~/img/BoxingTheme.jpg"/>
+<img class="img-thumbnail" src="~/img/BoxingTheme.jpg" />
 
-<div class="text-center">
+<h1 class="display-4 btn-dark text-center">Welcome to @GlobalConstants.SystemName!</h1>
 
-            <h1 class="display-4 btn-dark">Welcome to @GlobalConstants.SystemName!</h1>
+<hr />
 
+<div class="text-center font-weight-bold">
     <p>We have:</p>
-    <div class=" col-md-4 offset-4">
-        <ul class="list-group">
-            <li class="list-group-item bg-danger">Countries: @Model.CountriesCount</li>
-            <li class="list-group-item bg-danger">Weight classes: @Model.WeightClassesCount</li>
-            <li class="list-group-item bg-danger">Boxers: @Model.BoxersCount</li>
-            <li class="list-group-item bg-danger">Champions: @Model.ChampionsCount</li>
-        </ul>
-    </div>
+    <ul class="list-group row">
+        <li class="list-group-item bg-danger">Boxers: @Model.BoxersCount</li>
+        <li class="list-group-item bg-danger">Countries: @Model.CountriesCount</li>
+        <li class="list-group-item bg-danger">Weight classes: @Model.WeightClassesCount</li>
+        <li class="list-group-item bg-danger">Champions: @Model.ChampionsCount</li>
+    </ul>
 </div>
 
 <hr />

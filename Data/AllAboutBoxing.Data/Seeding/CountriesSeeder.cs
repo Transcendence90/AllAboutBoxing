@@ -54,6 +54,7 @@
             await dbContext.Countries.AddAsync(new Country { Name = "South Africa", CountryCode = "ZA", FlagUrl = "https://www.countryflags.io/ZA/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Sweden", CountryCode = "SE", FlagUrl = "https://www.countryflags.io/SE/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Finland", CountryCode = "FI", FlagUrl = "https://www.countryflags.io/FI/shiny/64.png" });
+            await dbContext.Countries.AddAsync(new Country { Name = "Democratic Republic Of The Congo", CountryCode = "CD", FlagUrl = "https://www.countryflags.io/CD/shiny/64.png" });
 
             await dbContext.SaveChangesAsync();
         }

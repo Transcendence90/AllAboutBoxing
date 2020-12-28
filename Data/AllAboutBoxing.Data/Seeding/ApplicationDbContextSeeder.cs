@@ -28,6 +28,7 @@
                               new RolesSeeder(),
                               new CountriesSeeder(),
                               new WeightClassesSeeder(),
+                              new RankingsSeeder(),
                           };
 
             foreach (var seeder in seeders)

@@ -1669,6 +1669,7 @@
           "AllAboutBoxing.Common": "1.0.0",
           "AllAboutBoxing.Data.Common": "1.0.0",
           "AllAboutBoxing.Data.Models": "1.0.0",
+          "AngleSharp": "0.14.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
           "Microsoft.Extensions.Configuration.UserSecrets": "3.1.9"

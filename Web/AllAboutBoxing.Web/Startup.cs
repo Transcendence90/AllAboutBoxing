@@ -10,6 +10,7 @@
     using AllAboutBoxing.Data.Seeding;
     using AllAboutBoxing.Services.Data;
     using AllAboutBoxing.Services.Data.News;
+    using AllAboutBoxing.Services.Data.Rankings;
     using AllAboutBoxing.Services.Mapping;
     using AllAboutBoxing.Services.Messaging;
     using AllAboutBoxing.Web.ViewModels;
@@ -70,6 +71,7 @@
             services.AddTransient<IChampionsService, ChampionsService>();
             services.AddTransient<IHallOfFameService, HallOfFameService>();
             services.AddTransient<INewsService, NewsService>();
+            services.AddTransient<IRankingsService, RankigsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

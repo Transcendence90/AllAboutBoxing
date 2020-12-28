@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "n4mi0h6lsxVybOEd/7qGQE8/L9fC4poyEaF9ZCaOkOwlQnzy205X3Y/1hrxbSCkU6+m+z2QTTJc0P08GJOvVuQ==",
+  "dgSpecHash": "QBfUNLxG3W6RZJUms58OEK5cpkQbZ5mkx0Jdn8n/v9W9FkS8D5eT/jZTpKbzgbiXuPJkajPqpyqKhtQS2fZWlg==",
   "success": true,
   "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Martin\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.9\\microsoft.aspnetcore.cryptography.internal.3.1.9.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.9\\microsoft.aspnetcore.cryptography.keyderivation.3.1.9.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\3.1.9\\microsoft.aspnetcore.identity.entityframeworkcore.3.1.9.nupkg.sha512",
