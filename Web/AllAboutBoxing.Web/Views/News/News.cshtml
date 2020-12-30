@@ -6,8 +6,8 @@
 
 @foreach (var news in Model.NewsList)
 {
-    <div class="list-group-item-dark text-center col-md-8">
-        <img class="float-md-left img-fluid" src="@news.ImageUrl" style="width:300px;height:200px;">
+    <div class="list-group-item-dark text-center col-md-8" style="z-index:100">
+        <img class="float-sm-left img-fluid" src="@news.ImageUrl" style="width:300px;height:200px;">
         <div class="teaserContentWrap">
             <div class="tools">
             </div>
@@ -17,7 +17,19 @@
     </div>
 }
 
-
+<div class="col-md-11 card-img-overlay" style="top:340px; z-index:0">
+    <div class="row justify-content-md-end">
+        <div class="text-center">
+            <div id="7fa7ece2e82442e3e553fb9d03932a86" class="ww-informers-box-854753 offset-2">
+                <p class="ww-informers-box-854754">
+                    <a href="https://world-weather.info/">world-weather.info</a>
+                    <br>
+                    <a href="https://world-weather.info/">world-weather.info</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <nav aria-label="...">
     <ul class="pagination justify-content-center">
@@ -51,3 +63,7 @@
         </li>
     </ul>
 </nav>
+
+@section Scripts{
+    <script async type="text/javascript" charset="utf-8" src="https://world-weather.info/wwinformer.php?userid=7fa7ece2e82442e3e553fb9d03932a86"></script>
+}

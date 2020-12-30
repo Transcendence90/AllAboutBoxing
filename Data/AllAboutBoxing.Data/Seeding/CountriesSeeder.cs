@@ -41,7 +41,7 @@
             await dbContext.Countries.AddAsync(new Country { Name = "Russian Federation", CountryCode = "RU", FlagUrl = "https://www.countryflags.io/RU/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Romania", CountryCode = "RO", FlagUrl = "https://www.countryflags.io/RO/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Latvia", CountryCode = "LV", FlagUrl = "https://www.countryflags.io/LV/shiny/64.png" });
-            await dbContext.Countries.AddAsync(new Country { Name = "Congo", CountryCode = "CG", FlagUrl = "https://www.countryflags.io/CG/shiny/64.png" });
+            await dbContext.Countries.AddAsync(new Country { Name = "Democratic Republic Of The Congo", CountryCode = "CD", FlagUrl = "https://www.countryflags.io/CD/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Armenia", CountryCode = "AM", FlagUrl = "https://www.countryflags.io/AM/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Kazakhstan", CountryCode = "KZ", FlagUrl = "https://www.countryflags.io/KZ/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Uzbekistan", CountryCode = "UZ", FlagUrl = "https://www.countryflags.io/UZ/shiny/64.png" });
@@ -54,7 +54,6 @@
             await dbContext.Countries.AddAsync(new Country { Name = "South Africa", CountryCode = "ZA", FlagUrl = "https://www.countryflags.io/ZA/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Sweden", CountryCode = "SE", FlagUrl = "https://www.countryflags.io/SE/shiny/64.png" });
             await dbContext.Countries.AddAsync(new Country { Name = "Finland", CountryCode = "FI", FlagUrl = "https://www.countryflags.io/FI/shiny/64.png" });
-            await dbContext.Countries.AddAsync(new Country { Name = "Democratic Republic Of The Congo", CountryCode = "CD", FlagUrl = "https://www.countryflags.io/CD/shiny/64.png" });
 
             await dbContext.SaveChangesAsync();
         }
