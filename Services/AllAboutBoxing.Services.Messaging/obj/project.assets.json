@@ -80,7 +80,7 @@
           "lib/netstandard1.0/Newtonsoft.Json.dll": {}
         }
       },
-      "SendGrid/9.21.0": {
+      "SendGrid/9.22.0": {
         "type": "package",
         "dependencies": {
           "Newtonsoft.Json": "9.0.1",
@@ -692,10 +692,10 @@
         "tools/install.ps1"
       ]
     },
-    "SendGrid/9.21.0": {
-      "sha512": "GY7NZcS0K4WjepDZhs5XxORqZDC1FmTz6iT/j9crCSCMBG4Y/9I/ia9b6ws8209Yv1uVjnDcNr0gf54ibIxIsw==",
+    "SendGrid/9.22.0": {
+      "sha512": "5vXkfOqPhi6W5/tEmRcTVJakT69SXiCGqVRERYF4ZAtJ4alylzlOqin6w8Xrog0Brf3RL+4BKXI+CwKbFLtteA==",
       "type": "package",
-      "path": "sendgrid/9.21.0",
+      "path": "sendgrid/9.22.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -711,7 +711,7 @@
         "lib/netstandard2.0/SendGrid.dll",
         "lib/netstandard2.0/SendGrid.pdb",
         "lib/netstandard2.0/SendGrid.xml",
-        "sendgrid.9.21.0.nupkg.sha512",
+        "sendgrid.9.22.0.nupkg.sha512",
         "sendgrid.nuspec"
       ]
     },
@@ -2752,13 +2752,13 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
-      "Sendgrid >= 9.21.0",
+      "Sendgrid >= 9.22.0",
       "StyleCop.Analyzers >= 1.2.0-beta.205"
     ]
   },
   "packageFolders": {
     "C:\\Users\\Martin\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2770,7 +2770,7 @@
       "outputPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Messaging\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2802,7 +2802,7 @@
         "dependencies": {
           "Sendgrid": {
             "target": "Package",
-            "version": "[9.21.0, )"
+            "version": "[9.22.0, )"
           },
           "StyleCop.Analyzers": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers",
@@ -2826,7 +2826,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

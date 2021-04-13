@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KNYuygIOuQm76Ln4qI8ys3Chlr+L2HfPuOJuIC3Cxs5VWAsLUAqvBmxE5chZ94bQHJb+xre/Z2FAG3+3ar0QWQ==",
+  "dgSpecHash": "kio7CWfgnrLWAxqwmKxvvBQ3zaY4Uh/3+nMjM9cUk498aFpGwqmG0VR4IlnDQlpTyB9Kr6anXWZ+uZwVt8FILA==",
   "success": true,
   "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Messaging\\AllAboutBoxing.Services.Messaging.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,7 @@
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\newtonsoft.json\\9.0.1\\newtonsoft.json.9.0.1.nupkg.sha512",
-    "C:\\Users\\Martin\\.nuget\\packages\\sendgrid\\9.21.0\\sendgrid.9.21.0.nupkg.sha512",
+    "C:\\Users\\Martin\\.nuget\\packages\\sendgrid\\9.22.0\\sendgrid.9.22.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\starkbank-ecdsa\\1.2.0\\starkbank-ecdsa.1.2.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",

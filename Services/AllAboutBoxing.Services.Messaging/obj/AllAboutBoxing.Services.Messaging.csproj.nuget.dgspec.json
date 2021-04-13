@@ -14,7 +14,7 @@
         "outputPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Messaging\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
           "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,7 +46,7 @@
           "dependencies": {
             "Sendgrid": {
               "target": "Package",
-              "version": "[9.21.0, )"
+              "version": "[9.22.0, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
