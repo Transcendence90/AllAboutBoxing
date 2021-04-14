@@ -1,12 +1,8 @@
 # AllAboutBoxing
 
- AllAboutBoxing is web application that representing the sport of boxing. The platform is dedicated to providing updated data and records of professional boxers.
+AllAboutBoxing is web application that representing the sport of boxing. The platform is dedicated to providing updated data and records of professional boxers.
 
- This is my project for the ASP.NET Core course at SoftUni.
-
-- Test account:
-
--- Admin: martin6391@abv.bg / password: 123456
+This is my project for the ASP.NET Core course at SoftUni.
 
 ## :hammer_and_pick: Built With
 
@@ -29,3 +25,9 @@
 - CloudinaryDotNet
 - Bootstrap
 - jQuery
+
+## https://allaboutboxing.azurewebsites.net/
+  
+## Admin Credentials
+Username: martin6391@abv.bg
+Password: 123456
