@@ -17,11 +17,14 @@
 
         }
         <div class="text-center">
-            <p class="font-weight-bold "><span>@rank.Rank<span>.</span></span> @rank.BoxerName</p>
+            @if (rank.Boxer != null)
+            {
+                <p class="font-weight-bold"><span>@rank.Rank<span>. </span></span><a class="font-weight-bold" asp-action="ById" asp-route-id="@rank.Boxer.Id">@rank.BoxerName</a></p>
+            }
+            else
+            {
+                <p class="font-weight-bold "><span>@rank.Rank<span>.</span></span> @rank.BoxerName</p>
+            }
         </div>
     </div>
 }
-
-
-
-

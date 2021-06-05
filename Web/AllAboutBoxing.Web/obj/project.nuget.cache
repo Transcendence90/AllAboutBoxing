@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rcDkdsC4Mi7zm50V20acJJgEcWTRvsVVwXtmhj2/CqHOdwJOZRMSjrKLckXpx3ZbkC7ob7ZSTqOwmQEUpIfExA==",
+  "dgSpecHash": "/JAPC3CajX5lYgVK5arRTxghfXGbq5gpoHdB4ykRtGsck9JXE4zgiqf8Uq7MFjaZaLmy2k6MmsKQ5JPRs2SsFg==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Web\\AllAboutBoxing.Web\\AllAboutBoxing.Web.csproj",
+  "projectFilePath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Web\\AllAboutBoxing.Web\\AllAboutBoxing.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Martin\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

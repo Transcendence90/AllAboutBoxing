@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GAw+opR7UczcDo9d0XjfgYXXp4pOGzfuoXnM7fZNRwAbZlicCgQ7EV1csVWzIe2gOcKsyJ6aI/wIapRLM9RTVA==",
+  "dgSpecHash": "kcQbTjBOiGHdxgyWlfD3c/9BFsMJnsIPz7ItPAN7GK5D6gMbHpDq+oIJAHnicTrI1L1+FbVj6ogoFYYKzfamuA==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Tests\\Sandbox\\Sandbox.csproj",
+  "projectFilePath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Tests\\Sandbox\\Sandbox.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Martin\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",

@@ -7,5 +7,7 @@
     public interface IRankingsService
     {
         IEnumerable<RankingsInListViewModel> GetAll();
+
+        T GetById<T>(int id);
     }
 }

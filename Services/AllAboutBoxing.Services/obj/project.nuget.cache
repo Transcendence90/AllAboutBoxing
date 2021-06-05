@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rd9Oos/ZM1MdBghWrsOnpFATGQFpfIaWGUZBnOf3pzC7OPfafPdOjHD/molbyTsHlYmymtz5LCRf1DXWsIZH6w==",
+  "dgSpecHash": "yxcKcSvUtj4hGlGoqNT7tXehs72UK38zm91F33eB+LQTIH8ois8tfyawkBupULIYdsb9G664DoyWb1/+YqJtzg==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services\\AllAboutBoxing.Services.csproj",
+  "projectFilePath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services\\AllAboutBoxing.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Martin\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.5\\microsoft.aspnetcore.cryptography.internal.5.0.5.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kkoXAvynP9mHOXQuugo6NUvPmCP1umYwrBnhbybcoRwPD7nDC7BZX9Z5nTQ6FDcu9sJg5jc41/jZyL0SKqyKhw==",
+  "dgSpecHash": "2eVGf/r7Emi8XOGqDbmJK7Z+LMGlmGirfxm2lnnrL71z626CV4afip4MuncP1l5HxJqH20jwUXLVst2HfZnwdA==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Mapping\\AllAboutBoxing.Services.Mapping.csproj",
+  "projectFilePath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Mapping\\AllAboutBoxing.Services.Mapping.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Martin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

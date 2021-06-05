@@ -9135,11 +9135,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Tests\\AllAboutBoxing.Services.Data.Tests\\AllAboutBoxing.Services.Data.Tests.csproj",
+      "projectUniqueName": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Tests\\AllAboutBoxing.Services.Data.Tests\\AllAboutBoxing.Services.Data.Tests.csproj",
       "projectName": "AllAboutBoxing.Services.Data.Tests",
-      "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Tests\\AllAboutBoxing.Services.Data.Tests\\AllAboutBoxing.Services.Data.Tests.csproj",
+      "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Tests\\AllAboutBoxing.Services.Data.Tests\\AllAboutBoxing.Services.Data.Tests.csproj",
       "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Tests\\AllAboutBoxing.Services.Data.Tests\\obj\\",
+      "outputPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Tests\\AllAboutBoxing.Services.Data.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -9160,11 +9160,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj": {
-              "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj"
+            "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj": {
+              "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj"
             },
-            "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Data\\AllAboutBoxing.Services.Data.csproj": {
-              "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Data\\AllAboutBoxing.Services.Data.csproj"
+            "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Data\\AllAboutBoxing.Services.Data.csproj": {
+              "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Data\\AllAboutBoxing.Services.Data.csproj"
             }
           }
         }

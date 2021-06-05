@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kio7CWfgnrLWAxqwmKxvvBQ3zaY4Uh/3+nMjM9cUk498aFpGwqmG0VR4IlnDQlpTyB9Kr6anXWZ+uZwVt8FILA==",
+  "dgSpecHash": "DNT+l+Ty5frb0WW73EB0/fGpB/VNQyHmmCYgtjmO2uVZqD0uZZVRFJ2Nw0FnE2/Q2hx30oCm02WJWIk6AMvT8Q==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Messaging\\AllAboutBoxing.Services.Messaging.csproj",
+  "projectFilePath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Messaging\\AllAboutBoxing.Services.Messaging.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\microsoft.netcore.platforms\\1.0.1\\microsoft.netcore.platforms.1.0.1.nupkg.sha512",

@@ -22,5 +22,10 @@
 
             return this.View(viewModel);
         }
+
+        public IActionResult ById(int id)
+        {
+            return this.Redirect($"/Boxers/ById/{id}");
+        }
     }
 }

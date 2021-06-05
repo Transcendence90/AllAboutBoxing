@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ixV5fgZ6ql9DbgQYoO2H4pKNd9vMFzMWpKurPCy9C1ahtC65yBqKOrd+E5yUCirHr8GQWJ3wEx9LaR09+i9Sg==",
+  "dgSpecHash": "TvtXGOdynx6b/MdAWqUHjHLgmow8hSe311FOyAPgvass+BJ8LKD34shXW96tyddXtmuEg472Ther4/SOVE9erA==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data.Common\\AllAboutBoxing.Data.Common.csproj",
+  "projectFilePath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Data\\AllAboutBoxing.Data.Common\\AllAboutBoxing.Data.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Martin\\.nuget\\packages\\stylecop.analyzers\\1.2.0-beta.205\\stylecop.analyzers.1.2.0-beta.205.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\stylecop.analyzers.unstable\\1.2.0.205\\stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512",

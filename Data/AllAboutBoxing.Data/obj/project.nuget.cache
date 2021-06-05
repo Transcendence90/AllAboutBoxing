@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wg002PdhAUh5xhplMcczX4ejNWjbIk31rW2Ajgn1gX4Db+QVTmoKHDqAKLvQ7e09Kax3/wdc2OsPWAkpLttFvg==",
+  "dgSpecHash": "+WXbcHY+jLIlT7RS7K64kJ1o0XhTIGrEUQuwbaRpn1K5BBIASW2NcHK6T676tgOiRokEVTWYiy33MkLOOIwFQA==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj",
+  "projectFilePath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Data\\AllAboutBoxing.Data\\AllAboutBoxing.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Martin\\.nuget\\packages\\anglesharp\\0.14.0\\anglesharp.0.14.0.nupkg.sha512",
     "C:\\Users\\Martin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

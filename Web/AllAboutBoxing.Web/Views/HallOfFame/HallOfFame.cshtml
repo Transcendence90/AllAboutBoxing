@@ -6,7 +6,7 @@
 <h1 class="text-center">@this.ViewData["Title"]</h1>
 
 <hr />
-<p>Mike Tyson, Joe Frazier and of course Muhammad Ali — there have been many legendary heavyweight boxers. Here's our list of the very best.</p>
+<p class="text-center">Mike Tyson, Joe Frazier and of course Muhammad Ali — there have been many legendary boxers. Here's our list of the very best.</p>
 <hr />
 
 @foreach (var boxer in Model.HallOfFameBoxers)
@@ -18,7 +18,9 @@
         <div class="teaserContentWrap">
             <div class="tools">
             </div>
-            <h2>@boxer.BoxerName</h2>
+            <h3>
+                <a class="font-weight-bold" asp-action="ById" asp-route-id="@boxer.Id">@boxer.BoxerName</a>
+            </h3>
             <p>@boxer.Description</p>
         </div>
     </div>

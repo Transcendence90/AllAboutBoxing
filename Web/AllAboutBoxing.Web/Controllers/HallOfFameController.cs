@@ -1,7 +1,6 @@
 ﻿namespace AllAboutBoxing.Web.Controllers
 {
     using AllAboutBoxing.Services.Data;
-    using AllAboutBoxing.Web.ViewModels.Champions;
     using AllAboutBoxing.Web.ViewModels.HallOfFame;
     using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +15,6 @@
 
         public IActionResult HallOfFame(int id = 1)
         {
-
             const int itemsPerPage = 1;
 
             var viewModel = new HallOfFameBoxersListViewModel
@@ -29,6 +27,10 @@
 
             return this.View(viewModel);
         }
+
+        public IActionResult ById(int id)
+        {
+            return this.Redirect($"/Boxers/ById/{id}");
+        }
     }
 }
-

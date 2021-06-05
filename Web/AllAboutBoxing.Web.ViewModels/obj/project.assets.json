@@ -1325,11 +1325,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Web\\AllAboutBoxing.Web.ViewModels\\AllAboutBoxing.Web.ViewModels.csproj",
+      "projectUniqueName": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Web\\AllAboutBoxing.Web.ViewModels\\AllAboutBoxing.Web.ViewModels.csproj",
       "projectName": "AllAboutBoxing.Web.ViewModels",
-      "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Web\\AllAboutBoxing.Web.ViewModels\\AllAboutBoxing.Web.ViewModels.csproj",
+      "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Web\\AllAboutBoxing.Web.ViewModels\\AllAboutBoxing.Web.ViewModels.csproj",
       "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Web\\AllAboutBoxing.Web.ViewModels\\obj\\",
+      "outputPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Web\\AllAboutBoxing.Web.ViewModels\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -1350,14 +1350,14 @@
         "netstandard2.1": {
           "targetAlias": "netstandard2.1",
           "projectReferences": {
-            "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data.Models\\AllAboutBoxing.Data.Models.csproj": {
-              "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Data\\AllAboutBoxing.Data.Models\\AllAboutBoxing.Data.Models.csproj"
+            "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Data\\AllAboutBoxing.Data.Models\\AllAboutBoxing.Data.Models.csproj": {
+              "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Data\\AllAboutBoxing.Data.Models\\AllAboutBoxing.Data.Models.csproj"
             },
-            "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Mapping\\AllAboutBoxing.Services.Mapping.csproj": {
-              "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Mapping\\AllAboutBoxing.Services.Mapping.csproj"
+            "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Mapping\\AllAboutBoxing.Services.Mapping.csproj": {
+              "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services.Mapping\\AllAboutBoxing.Services.Mapping.csproj"
             },
-            "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services\\AllAboutBoxing.Services.csproj": {
-              "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\Services\\AllAboutBoxing.Services\\AllAboutBoxing.Services.csproj"
+            "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services\\AllAboutBoxing.Services.csproj": {
+              "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\Services\\AllAboutBoxing.Services\\AllAboutBoxing.Services.csproj"
             }
           }
         }

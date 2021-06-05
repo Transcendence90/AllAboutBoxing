@@ -66,11 +66,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\AllAboutBoxing.Common\\AllAboutBoxing.Common.csproj",
+      "projectUniqueName": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\AllAboutBoxing.Common\\AllAboutBoxing.Common.csproj",
       "projectName": "AllAboutBoxing.Common",
-      "projectPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\AllAboutBoxing.Common\\AllAboutBoxing.Common.csproj",
+      "projectPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\AllAboutBoxing.Common\\AllAboutBoxing.Common.csproj",
       "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudio-Projects\\CSharp-ASP.NET Core\\AllAboutBoxing\\AllAboutBoxing.Common\\obj\\",
+      "outputPath": "D:\\VisualStudio-Projects\\WebProjects\\AllAboutBoxing\\AllAboutBoxing.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -125,7 +125,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
