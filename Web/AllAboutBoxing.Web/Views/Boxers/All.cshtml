@@ -26,7 +26,7 @@
     @foreach (var boxer in this.Model.Boxers)
     {
         <div class="media col-md-3 card-columns card-body">
-            <img src="@boxer.ImageUrl" width="100" class="mr-3 img-responsive">
+            <img src="@boxer.ImageUrl" width="100" height="125" class="mr-3 img-responsive">
             <div class="media-body">
                 <h5><a class="font-weight-bold" asp-action="ById" asp-route-id="@boxer.Id">@boxer.Name</a></h5>
                 <span><img src="@boxer.CountryFlagUrl"></span>
