@@ -1,6 +1,8 @@
 ﻿namespace AllAboutBoxing.Web.ViewModels.Boxers
 {
+    using System;
     using System.Collections.Generic;
+    using System.Globalization;
 
     using AllAboutBoxing.Data.Models;
     using AllAboutBoxing.Services.Mapping;
@@ -19,7 +21,7 @@
 
         public string ImageUrl { get; set; }
 
-        public int Age { get; set; }
+        public int Age => DateTime.Today.Year - DateTime.Parse(this.BirthDate, CultureInfo.InvariantCulture).Year;
 
         public string BirthDate { get; set; }
 
