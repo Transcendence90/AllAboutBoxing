@@ -29,5 +29,5 @@ This is my project for the ASP.NET Core course at SoftUni.
 ## https://allaboutboxing.azurewebsites.net/
   
 ## Admin Credentials
-Username: martin6391@abv.bg
+Username: test@test.com
 Password: 123456
