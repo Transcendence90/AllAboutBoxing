@@ -28,6 +28,6 @@ This is my project for the ASP.NET Core course at SoftUni.
 
 ## https://allaboutboxing.azurewebsites.net/
   
-## Admin Credentials
+## Credentials
 Username: test@test.com
 Password: 123456
