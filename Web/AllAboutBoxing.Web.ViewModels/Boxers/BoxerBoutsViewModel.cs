@@ -1,6 +1,5 @@
 ﻿namespace AllAboutBoxing.Web.ViewModels.Boxers
 {
-
     using AllAboutBoxing.Data.Models;
     using AllAboutBoxing.Services.Mapping;
 
