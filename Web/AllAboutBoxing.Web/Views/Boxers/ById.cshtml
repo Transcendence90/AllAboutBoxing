@@ -103,15 +103,15 @@
                     <td>
                         @if (bout.WayOfFinish.StartsWith("WIN"))
                         {
-                            <span class="text-success">@bout.WayOfFinish</span>
+                            <span class="text-success font-weight-bold">@bout.WayOfFinish</span>
                         }
                         else if (bout.WayOfFinish.StartsWith("LOSS"))
                         {
-                            <span class="text-danger">@bout.WayOfFinish</span>
+                            <span class="text-danger font-weight-bold">@bout.WayOfFinish</span>
                         }
                         else
                         {
-                            <span class="text-secondary">@bout.WayOfFinish</span>
+                            <span class="text-secondary font-weight-bold">@bout.WayOfFinish</span>
                         }
                     </td>
                 </tr>
