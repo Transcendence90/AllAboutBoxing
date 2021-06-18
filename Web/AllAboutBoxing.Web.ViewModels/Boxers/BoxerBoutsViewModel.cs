@@ -1,8 +1,9 @@
 ﻿namespace AllAboutBoxing.Web.ViewModels.Boxers
 {
+    using System;
+
     using AllAboutBoxing.Data.Models;
     using AllAboutBoxing.Services.Mapping;
-    using System;
 
     public class BoxerBoutsViewModel : IMapFrom<Bout>
     {
