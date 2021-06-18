@@ -85,7 +85,7 @@
         </thead>
         <tbody>
              
-            @foreach (var bout in Model.Bouts.OrderByDescending(x => x.BoutDate))
+            @foreach (var bout in Model.Bouts.OrderByDescending(x => x.DateOfBout))
             {
                 <tr>
                     <td class="d-inline-block text-truncate">
