@@ -45,7 +45,7 @@
         public T GetByName<T>(string name)
         {
             var boxer = this.boxersRepository.AllAsNoTracking()
-                .Where(x => x.Name == name)
+                .Where(x => x.Name.Contains(name))
                 .To<T>().FirstOrDefault();
 
             return boxer;
