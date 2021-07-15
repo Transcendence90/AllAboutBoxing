@@ -32,13 +32,13 @@
                                     Rankings
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="Rankings" asp-action="Rankings">Rankings</a>
-                                    <a class="nav-link text-dark" asp-area="" asp-controller="WeightClasses" asp-action="WeightClasses">WeightClasses</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Rankings" asp-action="Index">Rankings</a>
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="WeightClasses" asp-action="Index">WeightClasses</a>
                                 </div>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Champions" asp-action="Champions"><i class="fas fa-crown"></i> Champions</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Champions" asp-action="Index"><i class="fas fa-crown"></i> Champions</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Boxers" asp-action="All"><i class="fas fa-hand-rock"></i> Boxers</a>
@@ -46,11 +46,11 @@
                         @if (this.User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="HallOfFame" asp-action="HallOfFame"><i class="fas fa-archive"></i> HallOfFame</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="HallOfFame" asp-action="Index"><i class="fas fa-archive"></i> HallOfFame</a>
                             </li>
                         }
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="News"><i class="fas fa-globe-europe"></i> News</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index"><i class="fas fa-globe-europe"></i> News</a>
                         </li>
                     </ul>
                 </div>

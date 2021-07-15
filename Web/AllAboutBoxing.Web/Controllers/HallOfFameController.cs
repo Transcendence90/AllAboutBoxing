@@ -13,7 +13,7 @@
             this.hallOfFameService = hallOfFameService;
         }
 
-        public IActionResult HallOfFame(int id = 1)
+        public IActionResult Index(int id = 1)
         {
             const int itemsPerPage = 1;
 

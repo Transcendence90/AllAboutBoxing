@@ -13,7 +13,7 @@
             this.championsService = championsService;
         }
 
-        public IActionResult Champions()
+        public IActionResult Index()
         {
             var viewModel = new ChampionsListViewModel
             {

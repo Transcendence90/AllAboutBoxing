@@ -13,7 +13,7 @@
             this.rankingsService = rankingsService;
         }
 
-        public IActionResult Rankings()
+        public IActionResult Index()
         {
             var viewModel = new RankigsListViewModel
             {

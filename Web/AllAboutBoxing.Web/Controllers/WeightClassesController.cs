@@ -13,7 +13,7 @@
             this.weightClassesService = weightClassesService;
         }
 
-        public IActionResult WeightClasses()
+        public IActionResult Index()
         {
             var viewModel = new WeightClassesListViewModel
             {

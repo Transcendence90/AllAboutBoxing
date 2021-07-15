@@ -13,7 +13,7 @@
             this.newsService = newsService;
         }
 
-        public IActionResult News(int id = 1)
+        public IActionResult Index(int id = 1)
         {
             const int itemsPerPage = 5;
 
