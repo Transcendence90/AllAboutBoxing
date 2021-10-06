@@ -25,11 +25,6 @@
 
         public IActionResult WeightClassById(int id)
         {
-            if (!this.User.Identity.IsAuthenticated)
-            {
-                return this.Redirect("/Identity/Account/Login");
-            }
-
             var weightClass = this.weightClassesService.GetById<SingleWeightClassViewModel>(id);
             return this.View(weightClass);
         }

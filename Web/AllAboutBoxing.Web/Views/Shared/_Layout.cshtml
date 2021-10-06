@@ -43,12 +43,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Boxers" asp-action="All"><i class="fas fa-hand-rock"></i> Boxers</a>
                         </li>
-                        @if (this.User.Identity.IsAuthenticated)
-                        {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="HallOfFame" asp-action="Index"><i class="fas fa-archive"></i> HallOfFame</a>
                             </li>
-                        }
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="News" asp-action="Index"><i class="fas fa-globe-europe"></i> News</a>
                         </li>

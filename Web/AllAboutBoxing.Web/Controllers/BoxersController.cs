@@ -29,11 +29,6 @@
 
         public IActionResult ById(int id)
         {
-            if (!this.User.Identity.IsAuthenticated)
-            {
-                return this.Redirect("/Identity/Account/Login");
-            }
-
             var boxer = this.boxersService.GetById<SingleBoxerViewModel>(id);
             return this.View(boxer);
         }
